@@ -107,9 +107,24 @@
                     <view key="view" contentMode="scaleToFill" id="n0x-cV-8Lw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4p-6o-Cjd">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c4p-6o-Cjd" firstAttribute="top" secondItem="cyT-5I-BQN" secondAttribute="bottom" id="PVd-UJ-OXA"/>
+                            <constraint firstItem="c4p-6o-Cjd" firstAttribute="leading" secondItem="n0x-cV-8Lw" secondAttribute="leading" id="f2u-oh-s3I"/>
+                            <constraint firstAttribute="trailing" secondItem="c4p-6o-Cjd" secondAttribute="trailing" id="gn4-uk-ayq"/>
+                            <constraint firstItem="LgK-Xn-qpG" firstAttribute="top" secondItem="c4p-6o-Cjd" secondAttribute="bottom" id="tUH-2a-v5C"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="NEEC" image="dev" id="CeW-S8-rbz"/>
+                    <connections>
+                        <outlet property="webview" destination="c4p-6o-Cjd" id="RYV-vA-WRw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdB-YM-l6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
