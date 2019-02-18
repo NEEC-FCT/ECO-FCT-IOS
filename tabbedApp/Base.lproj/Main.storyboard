@@ -233,36 +233,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YS3-Ij-l1Z">
-                                <rect key="frame" x="52" y="617" width="271" height="30"/>
-                                <state key="normal" title="Esqueceu"/>
-                                <connections>
-                                    <segue destination="j6t-MP-7de" kind="show" id="0t9-yC-1ci"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZK-lW-HyE">
-                                <rect key="frame" x="52" y="556" width="271" height="30"/>
+                                <rect key="frame" x="23" y="556" width="336" height="30"/>
                                 <state key="normal" title="Registar"/>
                                 <connections>
                                     <segue destination="Xyv-Jl-qFm" kind="show" id="4dp-Bl-YBf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YS3-Ij-l1Z">
+                                <rect key="frame" x="23" y="617" width="336" height="30"/>
+                                <state key="normal" title="Esqueceu"/>
+                                <connections>
+                                    <segue destination="j6t-MP-7de" kind="show" id="0t9-yC-1ci"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NEEC" translatesAutoresizingMaskIntoConstraints="NO" id="S4X-dZ-me5">
+                                <rect key="frame" x="52" y="100" width="271" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="deN-W9-zPy"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2AU-WQ-n54">
+                                <rect key="frame" x="23" y="290" width="336" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKH-nE-amQ">
+                                <rect key="frame" x="23" y="345" width="336" height="30"/>
+                                <state key="normal" title="Login"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kGm-mC-Tjp">
+                                <rect key="frame" x="23" y="240" width="336" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="YS3-Ij-l1Z" firstAttribute="top" secondItem="kZK-lW-HyE" secondAttribute="bottom" constant="31" id="1u1-SN-7yb"/>
-                            <constraint firstItem="YS3-Ij-l1Z" firstAttribute="leading" secondItem="bQ9-xt-8N2" secondAttribute="leadingMargin" constant="36" id="L3p-8z-8xO"/>
-                            <constraint firstItem="kZK-lW-HyE" firstAttribute="leading" secondItem="bQ9-xt-8N2" secondAttribute="leadingMargin" constant="36" id="ORa-pg-I94"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YS3-Ij-l1Z" secondAttribute="trailing" constant="36" id="Ykx-iB-KK3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kZK-lW-HyE" secondAttribute="trailing" constant="36" id="Yob-kW-hek"/>
+                            <constraint firstItem="S4X-dZ-me5" firstAttribute="leading" secondItem="bQ9-xt-8N2" secondAttribute="leadingMargin" constant="36" id="21s-Xx-ZyF"/>
+                            <constraint firstItem="S4X-dZ-me5" firstAttribute="top" secondItem="Sze-Ai-H2r" secondAttribute="bottom" constant="36" id="BLJ-Jt-gwc"/>
+                            <constraint firstItem="2AU-WQ-n54" firstAttribute="leading" secondItem="bQ9-xt-8N2" secondAttribute="leadingMargin" constant="7" id="Dq2-hN-X44"/>
+                            <constraint firstItem="NKH-nE-amQ" firstAttribute="leading" secondItem="bQ9-xt-8N2" secondAttribute="leadingMargin" constant="7" id="Gex-oR-neg"/>
+                            <constraint firstItem="NKH-nE-amQ" firstAttribute="top" secondItem="2AU-WQ-n54" secondAttribute="bottom" constant="25" id="Jcz-Tp-PKw"/>
+                            <constraint firstItem="kGm-mC-Tjp" firstAttribute="top" secondItem="S4X-dZ-me5" secondAttribute="bottom" constant="40" id="Kz5-tl-dir"/>
+                            <constraint firstItem="YS3-Ij-l1Z" firstAttribute="leading" secondItem="bQ9-xt-8N2" secondAttribute="leadingMargin" constant="7" id="L3p-8z-8xO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kGm-mC-Tjp" secondAttribute="trailing" id="LNN-zc-yLH"/>
+                            <constraint firstItem="kZK-lW-HyE" firstAttribute="leading" secondItem="bQ9-xt-8N2" secondAttribute="leadingMargin" constant="7" id="ORa-pg-I94"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2AU-WQ-n54" secondAttribute="trailing" id="PLE-9m-010"/>
+                            <constraint firstItem="2AU-WQ-n54" firstAttribute="top" secondItem="kGm-mC-Tjp" secondAttribute="bottom" constant="20" id="UfP-MN-v2Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YS3-Ij-l1Z" secondAttribute="trailing" id="Ykx-iB-KK3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kZK-lW-HyE" secondAttribute="trailing" id="Yob-kW-hek"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NKH-nE-amQ" secondAttribute="trailing" id="dke-EW-fyG"/>
                             <constraint firstItem="4Nv-fA-22M" firstAttribute="top" secondItem="YS3-Ij-l1Z" secondAttribute="bottom" constant="20" id="fpG-Zr-AAV"/>
+                            <constraint firstItem="kGm-mC-Tjp" firstAttribute="leading" secondItem="bQ9-xt-8N2" secondAttribute="leadingMargin" constant="7" id="l5F-Gb-qY0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="S4X-dZ-me5" secondAttribute="trailing" constant="36" id="rQ1-OU-6PN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bcZ-jB-7ef"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j61-Xb-Qkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1919" y="-2079"/>
+            <point key="canvasLocation" x="-1919.2" y="-2079.3103448275865"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -288,6 +322,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NEEC" width="4522" height="1772"/>
         <image name="contest" width="18.75" height="18.75"/>
         <image name="dev" width="18.75" height="18.75"/>
         <image name="help" width="18.75" height="18.75"/>
