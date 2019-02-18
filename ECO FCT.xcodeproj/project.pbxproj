@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CEA5F24221A3D77005D0BAD /* Forgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA5F23221A3D77005D0BAD /* Forgot.swift */; };
+		9CEA5F26221A3DD8005D0BAD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA5F25221A3DD8005D0BAD /* Register.swift */; };
+		9CEA5F28221A3E0B005D0BAD /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA5F27221A3E0B005D0BAD /* Login.swift */; };
 		9CFDE5B92200A146007BE4CB /* NEEC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFDE5B82200A146007BE4CB /* NEEC.swift */; };
 		9CFDE5BB2200B5D6007BE4CB /* Parceiros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFDE5BA2200B5D6007BE4CB /* Parceiros.swift */; };
 		DECFA8E11DD0C96400ABF47D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFA8E01DD0C96400ABF47D /* AppDelegate.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9CEA5F23221A3D77005D0BAD /* Forgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forgot.swift; sourceTree = "<group>"; };
+		9CEA5F25221A3DD8005D0BAD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		9CEA5F27221A3E0B005D0BAD /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		9CFDE5B82200A146007BE4CB /* NEEC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEEC.swift; sourceTree = "<group>"; };
 		9CFDE5BA2200B5D6007BE4CB /* Parceiros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parceiros.swift; sourceTree = "<group>"; };
 		DECFA8DD1DD0C96400ABF47D /* ECO FCT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECO FCT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +75,9 @@
 				DECFA8EB1DD0C96400ABF47D /* LaunchScreen.storyboard */,
 				DECFA8EE1DD0C96400ABF47D /* Info.plist */,
 				9CFDE5B82200A146007BE4CB /* NEEC.swift */,
+				9CEA5F23221A3D77005D0BAD /* Forgot.swift */,
+				9CEA5F25221A3DD8005D0BAD /* Register.swift */,
+				9CEA5F27221A3E0B005D0BAD /* Login.swift */,
 			);
 			path = tabbedApp;
 			sourceTree = "<group>";
@@ -148,9 +157,12 @@
 			files = (
 				DECFA8E51DD0C96400ABF47D /* SecondViewController.swift in Sources */,
 				9CFDE5BB2200B5D6007BE4CB /* Parceiros.swift in Sources */,
+				9CEA5F24221A3D77005D0BAD /* Forgot.swift in Sources */,
 				9CFDE5B92200A146007BE4CB /* NEEC.swift in Sources */,
+				9CEA5F26221A3DD8005D0BAD /* Register.swift in Sources */,
 				DECFA8E11DD0C96400ABF47D /* AppDelegate.swift in Sources */,
 				DECFA8E31DD0C96400ABF47D /* FirstViewController.swift in Sources */,
+				9CEA5F28221A3E0B005D0BAD /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -40,7 +40,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="750" y="-280"/>
+        </scene>
+        <!--Register-->
+        <scene sceneID="VBl-5c-5dw">
+            <objects>
+                <viewController id="Xyv-Jl-qFm" customClass="Register" customModule="ECO_FCT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dhp-Q6-Voe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hs9-Q2-5wt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nh9-Je-itC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gV7-IZ-xKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-580" y="-2433"/>
+        </scene>
+        <!--Forgot-->
+        <scene sceneID="Ygk-6k-D6i">
+            <objects>
+                <viewController id="j6t-MP-7de" customClass="Forgot" customModule="ECO_FCT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GrI-m7-Ire"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cix-x3-3ti"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KY3-rQ-ai8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbE-Mk-xOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-545" y="-1720"/>
         </scene>
         <!--Log out-->
         <scene sceneID="HlP-k3-0Hu">
@@ -169,6 +205,65 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wRu-1W-F2J">
+            <objects>
+                <navigationController storyboardIdentifier="NavLogin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iZC-Z3-cqo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q8o-4I-VVJ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vwa-pv-cmO" kind="relationship" relationship="rootViewController" id="hKz-Qg-oFK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVm-8q-0Vr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3034" y="-2079"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="B0R-fe-eGc">
+            <objects>
+                <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vwa-pv-cmO" customClass="Login" customModule="ECO_FCT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sze-Ai-H2r"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Nv-fA-22M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bQ9-xt-8N2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YS3-Ij-l1Z">
+                                <rect key="frame" x="52" y="617" width="271" height="30"/>
+                                <state key="normal" title="Esqueceu"/>
+                                <connections>
+                                    <segue destination="j6t-MP-7de" kind="show" id="0t9-yC-1ci"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZK-lW-HyE">
+                                <rect key="frame" x="52" y="556" width="271" height="30"/>
+                                <state key="normal" title="Registar"/>
+                                <connections>
+                                    <segue destination="Xyv-Jl-qFm" kind="show" id="4dp-Bl-YBf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YS3-Ij-l1Z" firstAttribute="top" secondItem="kZK-lW-HyE" secondAttribute="bottom" constant="31" id="1u1-SN-7yb"/>
+                            <constraint firstItem="YS3-Ij-l1Z" firstAttribute="leading" secondItem="bQ9-xt-8N2" secondAttribute="leadingMargin" constant="36" id="L3p-8z-8xO"/>
+                            <constraint firstItem="kZK-lW-HyE" firstAttribute="leading" secondItem="bQ9-xt-8N2" secondAttribute="leadingMargin" constant="36" id="ORa-pg-I94"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YS3-Ij-l1Z" secondAttribute="trailing" constant="36" id="Ykx-iB-KK3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kZK-lW-HyE" secondAttribute="trailing" constant="36" id="Yob-kW-hek"/>
+                            <constraint firstItem="4Nv-fA-22M" firstAttribute="top" secondItem="YS3-Ij-l1Z" secondAttribute="bottom" constant="20" id="fpG-Zr-AAV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bcZ-jB-7ef"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j61-Xb-Qkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1919" y="-2079"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -189,7 +284,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-583" y="-895"/>
+            <point key="canvasLocation" x="-1287" y="-879"/>
         </scene>
     </scenes>
     <resources>
