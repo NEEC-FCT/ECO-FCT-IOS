@@ -17,6 +17,8 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         
         //checkar o login
+        
+        /*
         if( UserDefaults.standard.object(forKey: "email") == nil || UserDefaults.standard.object(forKey: "token") == nil  ){
         DispatchQueue.main.async(){
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -25,7 +27,7 @@ class FirstViewController: UIViewController {
          }
         }
         
-        else{
+        else{*/
         
             super.viewDidLoad()
             let span:MKCoordinateSpan = MKCoordinateSpanMake( 0.008 , 0.008)
@@ -40,7 +42,7 @@ class FirstViewController: UIViewController {
             print(EcoPoint)
             print(TrashPoint)
             print(ContainerPoint)
-        }
+        //}
     }
     
     //Adiciona o lixo
