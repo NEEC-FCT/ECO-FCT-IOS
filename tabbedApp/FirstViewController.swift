@@ -13,37 +13,7 @@ class FirstViewController: UIViewController {
     
     
 
-    
-    override func viewDidLoad() {
-        
-        //checkar o login
-        
-        /*
-        if( UserDefaults.standard.object(forKey: "email") == nil || UserDefaults.standard.object(forKey: "token") == nil  ){
-        DispatchQueue.main.async(){
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "NavLogin")
-            self.present(newViewController, animated: false, completion: nil)
-         }
-        }
-        
-        else{*/
-        
-            super.viewDidLoad()
-            let span:MKCoordinateSpan = MKCoordinateSpanMake( 0.008 , 0.008)
-            let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(38.661307,  -9.207192)
-            
-            let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-            map.setRegion(region, animated: true)
-            
-            EcoPointInit()
-            ContainersInit()
-            TrashInit()
-            print(EcoPoint)
-            print(TrashPoint)
-            print(ContainerPoint)
-        //}
-    }
+
     
     //Adiciona o lixo
     func TrashInit(){
@@ -308,7 +278,44 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    
+    
+    override func viewDidLoad() {
+        
+        //checkar o login
+        
+        print(UserDefaults.standard.string(forKey: "EMAIL") )
+        
+        print(UserDefaults.standard.string(forKey: "TOKEN") )
+        
+        if(  UserDefaults.standard.string(forKey: "EMAIL")  == nil ){
+            DispatchQueue.main.async(){
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "NavLogin")
+                self.present(newViewController, animated: false, completion: nil)
+            }
+        }
+            
+        else{
+            
+            super.viewDidLoad()
+            let span:MKCoordinateSpan = MKCoordinateSpanMake( 0.008 , 0.008)
+            let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(38.661307,  -9.207192)
+            
+            let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+            map.setRegion(region, animated: true)
+            
+            EcoPointInit()
+            ContainersInit()
+            TrashInit()
+            print(EcoPoint)
+            print(TrashPoint)
+            print(ContainerPoint)
+            //}
+        }
+    }
 
 }
 
