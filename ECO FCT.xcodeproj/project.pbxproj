@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C80E78BB3617E483118D582 /* Pods_ECO_FCT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1B26C138FDD18EA94016A1 /* Pods_ECO_FCT.framework */; };
+		9C0781E22236E1EA005EBA65 /*  ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0781E12236E1EA005EBA65 /*  ScannerViewController.swift */; };
+		9C0781E42236FE21005EBA65 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0781E32236FE21005EBA65 /* Question.swift */; };
+		9C48C5E3223EB1A3009C965D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C48C5E2223EB1A2009C965D /* GoogleService-Info.plist */; };
 		9C8C4AFB2236080C00F91B38 /* contest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8C4AFA2236080C00F91B38 /* contest.swift */; };
 		9CEA5F24221A3D77005D0BAD /* Forgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA5F23221A3D77005D0BAD /* Forgot.swift */; };
 		9CEA5F26221A3DD8005D0BAD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA5F25221A3DD8005D0BAD /* Register.swift */; };
@@ -22,12 +26,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1B26C138FDD18EA94016A1 /* Pods_ECO_FCT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECO_FCT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73AF878DE79ADC4203B43C21 /* Pods-ECO FCT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECO FCT.release.xcconfig"; path = "Pods/Target Support Files/Pods-ECO FCT/Pods-ECO FCT.release.xcconfig"; sourceTree = "<group>"; };
+		9C0781E12236E1EA005EBA65 /*  ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ScannerViewController.swift"; sourceTree = "<group>"; };
+		9C0781E32236FE21005EBA65 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		9C48C5E2223EB1A2009C965D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9C8C4AFA2236080C00F91B38 /* contest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contest.swift; sourceTree = "<group>"; };
 		9CEA5F23221A3D77005D0BAD /* Forgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forgot.swift; sourceTree = "<group>"; };
 		9CEA5F25221A3DD8005D0BAD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		9CEA5F27221A3E0B005D0BAD /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		9CFDE5B82200A146007BE4CB /* NEEC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEEC.swift; sourceTree = "<group>"; };
 		9CFDE5BA2200B5D6007BE4CB /* Parceiros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parceiros.swift; sourceTree = "<group>"; };
+		B0F57B6AD7929456A74CE87A /* Pods-ECO FCT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECO FCT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ECO FCT/Pods-ECO FCT.debug.xcconfig"; sourceTree = "<group>"; };
 		DECFA8DD1DD0C96400ABF47D /* ECO FCT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECO FCT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECFA8E01DD0C96400ABF47D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECFA8E21DD0C96400ABF47D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -43,17 +53,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C80E78BB3617E483118D582 /* Pods_ECO_FCT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		171335612EEAD51C540B71CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0F57B6AD7929456A74CE87A /* Pods-ECO FCT.debug.xcconfig */,
+				73AF878DE79ADC4203B43C21 /* Pods-ECO FCT.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DECFA8D41DD0C96300ABF47D = {
 			isa = PBXGroup;
 			children = (
 				DECFA8DF1DD0C96400ABF47D /* tabbedApp */,
 				DECFA8DE1DD0C96400ABF47D /* Products */,
+				171335612EEAD51C540B71CD /* Pods */,
+				F0D94EA8F19B4CC4E57288E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,13 +98,24 @@
 				DECFA8E61DD0C96400ABF47D /* Main.storyboard */,
 				DECFA8EB1DD0C96400ABF47D /* LaunchScreen.storyboard */,
 				DECFA8EE1DD0C96400ABF47D /* Info.plist */,
+				9C48C5E2223EB1A2009C965D /* GoogleService-Info.plist */,
 				9CFDE5B82200A146007BE4CB /* NEEC.swift */,
 				9CEA5F23221A3D77005D0BAD /* Forgot.swift */,
 				9CEA5F25221A3DD8005D0BAD /* Register.swift */,
 				9CEA5F27221A3E0B005D0BAD /* Login.swift */,
 				9C8C4AFA2236080C00F91B38 /* contest.swift */,
+				9C0781E12236E1EA005EBA65 /*  ScannerViewController.swift */,
+				9C0781E32236FE21005EBA65 /* Question.swift */,
 			);
 			path = tabbedApp;
+			sourceTree = "<group>";
+		};
+		F0D94EA8F19B4CC4E57288E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B1B26C138FDD18EA94016A1 /* Pods_ECO_FCT.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DECFA8F11DD0C96400ABF47D /* Build configuration list for PBXNativeTarget "ECO FCT" */;
 			buildPhases = (
+				35A95594F3F9BFF788D28FB6 /* [CP] Check Pods Manifest.lock */,
 				DECFA8D91DD0C96300ABF47D /* Sources */,
 				DECFA8DA1DD0C96300ABF47D /* Frameworks */,
 				DECFA8DB1DD0C96300ABF47D /* Resources */,
+				68746B3568ED7A531AB34ED5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,10 +183,62 @@
 				DECFA8ED1DD0C96400ABF47D /* LaunchScreen.storyboard in Resources */,
 				DECFA8EA1DD0C96400ABF47D /* Assets.xcassets in Resources */,
 				DECFA8E81DD0C96400ABF47D /* Main.storyboard in Resources */,
+				9C48C5E3223EB1A3009C965D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35A95594F3F9BFF788D28FB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ECO FCT-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68746B3568ED7A531AB34ED5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ECO FCT/Pods-ECO FCT-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JJFloatingActionButton/JJFloatingActionButton.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJFloatingActionButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ECO FCT/Pods-ECO FCT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DECFA8D91DD0C96300ABF47D /* Sources */ = {
@@ -160,12 +247,14 @@
 			files = (
 				DECFA8E51DD0C96400ABF47D /* SecondViewController.swift in Sources */,
 				9CFDE5BB2200B5D6007BE4CB /* Parceiros.swift in Sources */,
+				9C0781E22236E1EA005EBA65 /*  ScannerViewController.swift in Sources */,
 				9CEA5F24221A3D77005D0BAD /* Forgot.swift in Sources */,
 				9CFDE5B92200A146007BE4CB /* NEEC.swift in Sources */,
 				9C8C4AFB2236080C00F91B38 /* contest.swift in Sources */,
 				9CEA5F26221A3DD8005D0BAD /* Register.swift in Sources */,
 				DECFA8E11DD0C96400ABF47D /* AppDelegate.swift in Sources */,
 				DECFA8E31DD0C96400ABF47D /* FirstViewController.swift in Sources */,
+				9C0781E42236FE21005EBA65 /* Question.swift in Sources */,
 				9CEA5F28221A3E0B005D0BAD /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +374,7 @@
 		};
 		DECFA8F21DD0C96400ABF47D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0F57B6AD7929456A74CE87A /* Pods-ECO FCT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S4HVWNDNBH;
@@ -298,6 +388,7 @@
 		};
 		DECFA8F31DD0C96400ABF47D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73AF878DE79ADC4203B43C21 /* Pods-ECO FCT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S4HVWNDNBH;

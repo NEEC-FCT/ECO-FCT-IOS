@@ -14,10 +14,6 @@ import AVFoundation
 class contest: UIViewController {
     
   
-
-    @IBAction func scanQR(_ sender: Any) {
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +26,51 @@ class contest: UIViewController {
         super.didReceiveMemoryWarning()
         self.hideKeyboardWhenTappedAround()
         // Dispose of any resources that can be recreated.
+        //Pedido
+        NSLog("Pedido")
+        let url = URL(string: "https://ecoapp.neec-fct.com/getStatus.php")!
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        
+        
+
+        var postString =   "&email=" + UserDefaults.standard.string(forKey: "EMAIL")!
+        postString =   postString + "&token=" + UserDefaults.standard.string(forKey: "TOKEN")!
+        
+        NSLog("Pedido: " + postString)
+        
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                
+                
+                print("error=\(error!)")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                
+                
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response!)")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("response = \(response!)")
+            let dict = self.convertToDictionary(text: responseString!)
+            print(dict!)
+            
+            //login
+            // if( dict?["success"]  as! Int == 1 ){
+            
+            print("responseString = \(responseString!)")
+            
+         
+        }
+        task.resume()
+        
+        
     }
     
     func convertToDictionary(text: String) -> [String: Any]? {
