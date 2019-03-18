@@ -15,7 +15,8 @@ class  PlasticChoosed: UIViewController  , UICollectionViewDataSource, UICollect
     
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var descricao = ["Papel ou Cartão", "Plástico ou Metal", "Vidro", "Resíduo Perigoso", "Resíduo de Elétricos", "Lâmpada", "Óleo lubrificante", "plasticc", "Resíduo Orgânico" ]
+    var descricao = ["Garrafas e garrafões de plástico (água, sumos, óleos alimentares, detergentes)",
+                     "Embalagens contaminadas com substâncias perigosas" , "Sacos e filme de plásticos limpos" , "Garrafões de combustível" , "Embalagens de plástico e metal" ,"Cassetes de vídeo, canetas, CD e DVD" , "Latas de bebida e conserva" , "Caixas de cartão" , "Pacotes de leite e sumos" , "Toalhetes e fraldas" , "Embalagens de iogurte" , "Eletrodomésticos, pilhas e baterias"  , "Aerossóis (sprays)" , "Pratos e talheres de plástico" , "Esferovite" , "Objetos de metal que não sejam embalagens", "" , "Brinquedos" , "Voltar"]
     
     
     // MARK: - UICollectionViewDataSource protocol
@@ -44,6 +45,13 @@ class  PlasticChoosed: UIViewController  , UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        if(indexPath.item == 18){
+            DispatchQueue.main.async(){
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "starter")
+                self.present(newViewController, animated: false, completion: nil)
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

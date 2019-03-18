@@ -15,7 +15,7 @@ class  GlassChoosed: UIViewController  , UICollectionViewDataSource, UICollectio
     
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var descricao = ["Papel ou Cartão", "Plástico ou Metal", "Vidro", "Resíduo Perigoso", "Resíduo de Elétricos", "Lâmpada", "Óleo lubrificante", "glaaa", "Resíduo Orgânico" ]
+    var descricao = [ "Garrafas" , "Embalagens contaminadas com substâncias perigosas" , "Frascos" , "Loiças, pirex e cerâmicas" , "Garrafões" , "Vidros planos" , "Boiões" , "Janelas, vidraças e pára brisas" , ""  ,  "Vidros especiais"   , "" ,  "Lâmpadas" , "" ,  "Espelhos e cristais" , "" ,"Vidros corados e cerâmicos" , "" ,"Embalagens de medicamentos" , "" ,"Rolhas" , "Voltar"]
     
     
     // MARK: - UICollectionViewDataSource protocol
@@ -44,6 +44,13 @@ class  GlassChoosed: UIViewController  , UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        if(indexPath.item == 20){
+            DispatchQueue.main.async(){
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "starter")
+                self.present(newViewController, animated: false, completion: nil)
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

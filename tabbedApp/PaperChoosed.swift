@@ -15,7 +15,7 @@ class  PaperChoosed: UIViewController  , UICollectionViewDataSource, UICollectio
     
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var descricao = ["Papel ou Cartão", "Plástico ou Metal", "Vidro", "Resíduo Perigoso", "Resíduo de Elétricos", "Lâmpada", "Óleo lubrificante", "Mobiliário", "Resíduo Orgânico" ]
+    var descricao = ["Embalagens de cartão e papel" , "Embalagens contaminadas com substâncias perigosas " , "Jornais,Revistas" ,"Resíduos orgânicos" ,"Papel de escrita e impresso" , "Guardanapos e lenços de papel" , "Sacos de papel" , "Loiça de papel" , "Livros / Cadernos (sem argolas)" , "Papel sujo ou húmido " , "" , "Papel vegetal, de alumínio, encerado ou com plástico " , "" , "Embalagens de cartão com gordura" , "" ,"Toalhetes e fraldas " , "" , "Autocolantes"  , "Voltar" ]
     
     
     // MARK: - UICollectionViewDataSource protocol
@@ -44,6 +44,13 @@ class  PaperChoosed: UIViewController  , UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+         if(indexPath.item == 18){
+            DispatchQueue.main.async(){
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "starter")
+                self.present(newViewController, animated: false, completion: nil)
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
