@@ -2,6 +2,7 @@
 
 import UIKit
 import MapKit
+import JJFloatingActionButton
 
 class FirstViewController: UIViewController {
 
@@ -10,11 +11,106 @@ class FirstViewController: UIViewController {
     var EcoPoint: Set<MKPointAnnotation> = []
     var ContainerPoint: Set<MKPointAnnotation> = []
     var TrashPoint: Set<MKPointAnnotation> = []
+    let actionButton = JJFloatingActionButton()
+    private var locationManager: CLLocationManager!
+    private var currentLocation: CLLocation?
+    
+    func getClosestEcoPoint(){
+        // iterate over all items in the set
+        
+        let maxDistance:Double = 555555
+        var point:MKPointAnnotation? = nil
+        
+        for item in EcoPoint {
+            
+            let distancia = getdistance(loc2: item)
+            if( distancia < maxDistance){
+                point = item
+            }
+            
+        }
+        //Set do ponto
+        setMap(point: point!)
+        
+    }
+    
+    func getClosestContainer(){
+        // iterate over all items in the set
+        
+        let maxDistance:Double = 555555
+        var point:MKPointAnnotation? = nil
+        
+        for item in ContainerPoint {
+            
+            let distancia = getdistance(loc2: item)
+            if( distancia < maxDistance){
+                point = item
+            }
+            
+        }
+        //Set do ponto
+        setMap(point: point!)
+        
+    }
     
     
+    func getdistance(loc2: MKPointAnnotation ) -> Double{
+        
+        let loc1:CLLocationCoordinate2D = self.locationManager.location!.coordinate
+        //My location
+        let myLocation = CLLocation(latitude: loc1.latitude, longitude: loc1.longitude)
+        
+        //My buddy's location
+        let myBuddysLocation = CLLocation(latitude: loc2.coordinate.latitude, longitude: loc2.coordinate.longitude)
+        
+        //Measuring my distance to my buddy's (in km)
+        return myLocation.distance(from: myBuddysLocation) / 1000
 
-
+    }
     
+    func setMap(point:MKPointAnnotation){
+        let span:MKCoordinateSpan = MKCoordinateSpanMake( 0.0008 , 0.0008)
+        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(point.coordinate.latitude,  point.coordinate.longitude)
+        
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        map.setRegion(region, animated: true)
+    }
+
+    func getClosestTrash(){
+        // iterate over all items in the set
+       
+        let maxDistance:Double = 555555
+        var point:MKPointAnnotation? = nil
+        
+        for item in TrashPoint {
+          
+            let distancia = getdistance(loc2: item)
+            if( distancia < maxDistance){
+                point = item
+            }
+        
+        }
+        //Set do ponto
+        setMap(point: point!)
+      
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        defer { currentLocation = locations.last }
+        
+        if currentLocation == nil {
+            // Zoom to user location
+            if let userLocation = locations.last {
+                let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 2000, 2000)
+                map.setRegion(viewRegion, animated: false)
+            }
+        }
+    }
+    
+    override func viewDidLoad() {
+        
+      
+        
         locationManager = CLLocationManager()
         locationManager.delegate = self as? CLLocationManagerDelegate
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -25,6 +121,76 @@ class FirstViewController: UIViewController {
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         }
+       
+        //checkar o login
+        
+        actionButton.addItem(title: "Equipa", image: UIImage(named: "recycle")?.withRenderingMode(.alwaysTemplate)) { item in
+            
+            self.getClosestTrash()
+
+            
+            
+        }
+        
+        actionButton.addItem(title: "Equipa", image: UIImage(named: "ecoamarelo")?.withRenderingMode(.alwaysTemplate)) { item in
+            self.getClosestEcoPoint()
+            
+        }
+        
+        actionButton.addItem(title: "Equipa", image: UIImage(named: "lixo")?.withRenderingMode(.alwaysTemplate)) { item in
+            self.getClosestContainer()
+        }
+        
+        
+        actionButton.addItem(title: "Scan", image: UIImage(named: "qrcode")?.withRenderingMode(.alwaysTemplate)) { item in
+            DispatchQueue.main.async {
+                
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "qrreader")
+                self.present(newViewController, animated: true, completion: nil)
+                
+            }
+        }
+        
+        
+        view.addSubview(actionButton)
+        
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        if #available(iOS 11.0, *) {
+            actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
+            actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+        } else {
+            // Fallback on earlier versions
+            actionButton.display(inViewController: self)
+        }
+        
+        if(  UserDefaults.standard.string(forKey: "EMAIL")  == nil ){
+            DispatchQueue.main.async(){
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "NavLogin")
+                self.present(newViewController, animated: false, completion: nil)
+            }
+        }
+            
+        else{
+            
+            super.viewDidLoad()
+            let span:MKCoordinateSpan = MKCoordinateSpanMake( 0.008 , 0.008)
+            let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(38.661307,  -9.207192)
+            
+            let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+            map.setRegion(region, animated: true)
+            
+            EcoPointInit()
+            ContainersInit()
+            TrashInit()
+            print(EcoPoint)
+            print(TrashPoint)
+            print(ContainerPoint)
+            //}
+        }
+    }
+
     //Adiciona o lixo
     func TrashInit(){
         //Ponto
@@ -292,40 +458,7 @@ class FirstViewController: UIViewController {
     
     
     
-    override func viewDidLoad() {
-        
-        //checkar o login
-        
-        print(UserDefaults.standard.string(forKey: "EMAIL") )
-        
-        print(UserDefaults.standard.string(forKey: "TOKEN") )
-        
-        if(  UserDefaults.standard.string(forKey: "EMAIL")  == nil ){
-            DispatchQueue.main.async(){
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let newViewController = storyBoard.instantiateViewController(withIdentifier: "NavLogin")
-                self.present(newViewController, animated: false, completion: nil)
-            }
-        }
-            
-        else{
-            
-            super.viewDidLoad()
-            let span:MKCoordinateSpan = MKCoordinateSpanMake( 0.008 , 0.008)
-            let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(38.661307,  -9.207192)
-            
-            let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-            map.setRegion(region, animated: true)
-            
-            EcoPointInit()
-            ContainersInit()
-            TrashInit()
-            print(EcoPoint)
-            print(TrashPoint)
-            print(ContainerPoint)
-            //}
-        }
-    }
+    
 
 }
 

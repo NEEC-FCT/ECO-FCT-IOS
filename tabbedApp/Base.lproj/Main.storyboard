@@ -261,7 +261,7 @@
                                 <rect key="frame" x="24" y="562" width="327" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="QR Code"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
@@ -271,11 +271,33 @@
                                     <segue destination="IZk-nk-ZcS" kind="modal" id="F7I-j7-LP3"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VYv-zq-w74">
+                                <rect key="frame" x="16" y="276" width="343" height="257"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="D23-ZH-s9i">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D23-ZH-s9i" id="g54-Ot-7bN">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rId-iF-u1t" id="wgJ-eG-wjY"/>
+                                    <outlet property="delegate" destination="rId-iF-u1t" id="Rgc-h2-5OK"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="W6x-2c-G56" firstAttribute="leading" secondItem="ym7-yp-Wgu" secondAttribute="leadingMargin" constant="8" id="4kg-WY-8KQ"/>
+                            <constraint firstItem="VYv-zq-w74" firstAttribute="top" secondItem="BuO-8V-cu4" secondAttribute="bottom" constant="256" id="AhG-vY-noK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="W6x-2c-G56" secondAttribute="trailing" constant="8" id="CZJ-d0-DCV"/>
+                            <constraint firstItem="W6x-2c-G56" firstAttribute="top" secondItem="VYv-zq-w74" secondAttribute="bottom" constant="29" id="HhQ-qR-UhZ"/>
+                            <constraint firstItem="VYv-zq-w74" firstAttribute="trailing" secondItem="ym7-yp-Wgu" secondAttribute="trailingMargin" id="LSf-CX-s7b"/>
+                            <constraint firstItem="VYv-zq-w74" firstAttribute="leading" secondItem="ym7-yp-Wgu" secondAttribute="leadingMargin" id="Nag-hV-EKt"/>
                             <constraint firstItem="3hz-Zg-WO7" firstAttribute="top" secondItem="W6x-2c-G56" secondAttribute="bottom" constant="26" id="lxZ-vI-ecT"/>
                         </constraints>
                     </view>
@@ -283,12 +305,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgh-cd-XmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-1781"/>
+            <point key="canvasLocation" x="749.60000000000002" y="-1781.5592203898052"/>
         </scene>
         <!--Scanner View Controller-->
         <scene sceneID="1cY-gS-EEz">
             <objects>
-                <viewController id="IZk-nk-ZcS" customClass="ScannerViewController" customModule="ECO_FCT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="qrreader" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IZk-nk-ZcS" customClass="ScannerViewController" customModule="ECO_FCT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xei-7b-YbK"/>
                         <viewControllerLayoutGuide type="bottom" id="3XM-Se-v4h"/>
@@ -692,7 +714,7 @@
                                     <segue destination="j6t-MP-7de" kind="show" id="0t9-yC-1ci"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NEEC" translatesAutoresizingMaskIntoConstraints="NO" id="S4X-dZ-me5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ecofct" translatesAutoresizingMaskIntoConstraints="NO" id="S4X-dZ-me5">
                                 <rect key="frame" x="52" y="100" width="271" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="deN-W9-zPy"/>
@@ -774,7 +796,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NEEC" width="4522" height="1772"/>
         <image name="contest" width="18.75" height="18.75"/>
         <image name="correct" width="512" height="512"/>
         <image name="dev" width="18.75" height="18.75"/>
