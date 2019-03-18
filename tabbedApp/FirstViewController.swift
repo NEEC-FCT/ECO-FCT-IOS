@@ -15,6 +15,16 @@ class FirstViewController: UIViewController {
 
 
     
+        locationManager = CLLocationManager()
+        locationManager.delegate = self as? CLLocationManagerDelegate
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        // Check for Location Services
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+        }
     //Adiciona o lixo
     func TrashInit(){
         //Ponto
