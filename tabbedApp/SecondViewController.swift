@@ -63,19 +63,111 @@ class SecondViewController: UIViewController  , UICollectionViewDataSource, UICo
         return cell
     }
     
+    
+    func openMail(email:String){
+        if let url = URL(string: "mailto:\(email)") {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+    
+  
+    
+    func showWarning( mensagem:String , email:String){
+        let alert = UIAlertController(title: "", message: mensagem, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        alert.addAction(UIAlertAction(title: "Já tenho", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                self.openMail(email: email)
+                
+            case .cancel:
+                print("cancel")
+                self.openMail(email: email)
+                
+            case .destructive:
+                print("destructive")
+                self.openMail(email: email)
+                
+                
+            }}))
+        self.present(alert, animated: true, completion: nil)
+    }
+
     // MARK: - UICollectionViewDelegate protocol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        
+        if(indexPath.item == 0){
+            DispatchQueue.main.async(){
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "Paper")
+                self.present(newViewController, animated: false, completion: nil)
+            }
+        }
+       else  if(indexPath.item == 1){
+            DispatchQueue.main.async(){
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "plastic")
+                self.present(newViewController, animated: false, completion: nil)
+            }
+        }
+        else  if(indexPath.item == 2){
+            DispatchQueue.main.async(){
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "glass")
+                self.present(newViewController, animated: false, completion: nil)
+            }
+        }
+        else  if(indexPath.item == 3){
+            guard let url = URL(string: "https://bd2.fct.unl.pt/v7/downloads/dat/ef025_03_entrega_res_perigosos_0118.pdf ") else { return }
+            UIApplication.shared.open(url)
+        }
+        else  if(indexPath.item == 4){
+            
+             showWarning( mensagem: "Solicite à Direção o abate do equipamento" , email: "div.at.sg.helpdesk@fct.unl.pt")
+           
+        }
+        else  if(indexPath.item == 5){
+             showWarning( mensagem: "Coloque a lâmpada usada inteira na embalagem de cartão da lâmpada nova" , email: "div.at.sg.helpdesk@fct.unl.pt")
+           
+        }
+        else  if(indexPath.item == 6){
+            guard let url = URL(string: "https://bd2.fct.unl.pt/v7/downloads/dat/ef025_03_entrega_res_perigosos_0118.pdf") else { return }
+            UIApplication.shared.open(url)
+            
+        }
+        else  if(indexPath.item == 7){
+            showWarning( mensagem: "Solicite à Direção o abate do equipamento" , email: "div.at.sg.helpdesk@fct.unl.pt")
+            
+        }
+        else  if(indexPath.item == 8){
+           //abrir o mapa
+            
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding: CGFloat =  10
         let collectionViewSize = collectionView.frame.size.width - padding
-        
-   
-        
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
     }
     
