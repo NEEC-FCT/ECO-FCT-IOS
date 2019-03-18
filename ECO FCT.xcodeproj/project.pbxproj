@@ -12,6 +12,9 @@
 		9C0781E42236FE21005EBA65 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0781E32236FE21005EBA65 /* Question.swift */; };
 		9C48C5E3223EB1A3009C965D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C48C5E2223EB1A2009C965D /* GoogleService-Info.plist */; };
 		9C48C5EB223F9C99009C965D /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48C5EA223F9C99009C965D /* MyCollectionViewCell.swift */; };
+		9C48C5ED223FE4A3009C965D /* PaperChoosed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48C5EC223FE4A3009C965D /* PaperChoosed.swift */; };
+		9C48C5EF223FE4BD009C965D /* PlasticChoosed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48C5EE223FE4BD009C965D /* PlasticChoosed.swift */; };
+		9C48C5F1223FE4D3009C965D /* GlassChoosed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48C5F0223FE4D3009C965D /* GlassChoosed.swift */; };
 		9C8C4AFB2236080C00F91B38 /* contest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8C4AFA2236080C00F91B38 /* contest.swift */; };
 		9CEA5F24221A3D77005D0BAD /* Forgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA5F23221A3D77005D0BAD /* Forgot.swift */; };
 		9CEA5F26221A3DD8005D0BAD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA5F25221A3DD8005D0BAD /* Register.swift */; };
@@ -33,6 +36,9 @@
 		9C0781E32236FE21005EBA65 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		9C48C5E2223EB1A2009C965D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9C48C5EA223F9C99009C965D /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C48C5EC223FE4A3009C965D /* PaperChoosed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperChoosed.swift; sourceTree = "<group>"; };
+		9C48C5EE223FE4BD009C965D /* PlasticChoosed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasticChoosed.swift; sourceTree = "<group>"; };
+		9C48C5F0223FE4D3009C965D /* GlassChoosed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassChoosed.swift; sourceTree = "<group>"; };
 		9C8C4AFA2236080C00F91B38 /* contest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contest.swift; sourceTree = "<group>"; };
 		9CEA5F23221A3D77005D0BAD /* Forgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forgot.swift; sourceTree = "<group>"; };
 		9CEA5F25221A3DD8005D0BAD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
@@ -109,6 +115,9 @@
 				9C0781E12236E1EA005EBA65 /*  ScannerViewController.swift */,
 				9C0781E32236FE21005EBA65 /* Question.swift */,
 				9C48C5EA223F9C99009C965D /* MyCollectionViewCell.swift */,
+				9C48C5EC223FE4A3009C965D /* PaperChoosed.swift */,
+				9C48C5EE223FE4BD009C965D /* PlasticChoosed.swift */,
+				9C48C5F0223FE4D3009C965D /* GlassChoosed.swift */,
 			);
 			path = tabbedApp;
 			sourceTree = "<group>";
@@ -248,12 +257,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C48C5EF223FE4BD009C965D /* PlasticChoosed.swift in Sources */,
 				DECFA8E51DD0C96400ABF47D /* SecondViewController.swift in Sources */,
 				9CFDE5BB2200B5D6007BE4CB /* Parceiros.swift in Sources */,
 				9C48C5EB223F9C99009C965D /* MyCollectionViewCell.swift in Sources */,
 				9C0781E22236E1EA005EBA65 /*  ScannerViewController.swift in Sources */,
+				9C48C5ED223FE4A3009C965D /* PaperChoosed.swift in Sources */,
 				9CEA5F24221A3D77005D0BAD /* Forgot.swift in Sources */,
 				9CFDE5B92200A146007BE4CB /* NEEC.swift in Sources */,
+				9C48C5F1223FE4D3009C965D /* GlassChoosed.swift in Sources */,
 				9C8C4AFB2236080C00F91B38 /* contest.swift in Sources */,
 				9CEA5F26221A3DD8005D0BAD /* Register.swift in Sources */,
 				DECFA8E11DD0C96400ABF47D /* AppDelegate.swift in Sources */,

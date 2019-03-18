@@ -6,20 +6,47 @@
 //  Copyright © 2016 MAGNUMIUM. All rights reserved.
 //
 
+//Hex
+extension UIColor {
+    convenience init?(hexString: String) {
+        var chars = Array(hexString.hasPrefix("#") ? hexString.dropFirst() : hexString[...])
+        let red, green, blue, alpha: CGFloat
+        switch chars.count {
+        case 3:
+            chars = chars.flatMap { [$0, $0] }
+            fallthrough
+        case 6:
+            chars = ["F","F"] + chars
+            fallthrough
+        case 8:
+            alpha = CGFloat(strtoul(String(chars[0...1]), nil, 16)) / 255
+            red   = CGFloat(strtoul(String(chars[2...3]), nil, 16)) / 255
+            green = CGFloat(strtoul(String(chars[4...5]), nil, 16)) / 255
+            blue  = CGFloat(strtoul(String(chars[6...7]), nil, 16)) / 255
+        default:
+            return nil
+        }
+        self.init(red: red, green: green, blue:  blue, alpha: alpha)
+    }
+}
+
+
 import UIKit
 
 class SecondViewController: UIViewController  , UICollectionViewDataSource, UICollectionViewDelegate  , UICollectionViewDelegateFlowLayout{
 
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ]
+    var descricao = ["Papel ou Cartão", "Plástico ou Metal", "Vidro", "Resíduo Perigoso", "Resíduo de Elétricos", "Lâmpada", "Óleo lubrificante", "Mobiliário", "Resíduo Orgânico" ]
+    var imagens   = ["textdocuments", "bag", "fragile", "dangerouscan", "circuitboard", "lamp", "diesel", "couch", "apple" ]
+    var hex   = ["#09A9FF", "#faff00", "#05af21" , "#4BAA50", "#F94336", "#09A9FF", "#e5f71b", "#673BB7", "#995710" ]
     
     
     // MARK: - UICollectionViewDataSource protocol
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        return self.descricao.count
     }
     
     // make a cell for each cell index path
@@ -29,9 +56,9 @@ class SecondViewController: UIViewController  , UICollectionViewDataSource, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionViewCell
         
         //Set na celu
-        cell.myLabel.text = self.items[indexPath.item]
-        cell.image.image = UIImage(named: "textdocuments")
-        cell.backgroundColor = UIColor.cyan
+        cell.myLabel.text = self.descricao[indexPath.item]
+        cell.image.image = UIImage(named: self.imagens[indexPath.item] )
+        cell.backgroundColor = UIColor(hexString: self.hex[indexPath.item] )
         
         return cell
     }
@@ -44,7 +71,7 @@ class SecondViewController: UIViewController  , UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let padding: CGFloat =  50
+        let padding: CGFloat =  10
         let collectionViewSize = collectionView.frame.size.width - padding
         
    
@@ -61,6 +88,11 @@ class SecondViewController: UIViewController  , UICollectionViewDataSource, UICo
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
+  
 
 
 }
