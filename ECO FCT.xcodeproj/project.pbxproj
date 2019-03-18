@@ -16,6 +16,9 @@
 		9C48C5EF223FE4BD009C965D /* PlasticChoosed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48C5EE223FE4BD009C965D /* PlasticChoosed.swift */; };
 		9C48C5F1223FE4D3009C965D /* GlassChoosed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48C5F0223FE4D3009C965D /* GlassChoosed.swift */; };
 		9C8C4AFB2236080C00F91B38 /* contest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8C4AFA2236080C00F91B38 /* contest.swift */; };
+		9CCC8B02223FF5A8005009DA /* PaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC8B01223FF5A8005009DA /* PaperCell.swift */; };
+		9CCC8B04223FFFEF005009DA /* PlasticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC8B03223FFFEF005009DA /* PlasticCell.swift */; };
+		9CCC8B062240001C005009DA /* GlassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC8B052240001C005009DA /* GlassCell.swift */; };
 		9CEA5F24221A3D77005D0BAD /* Forgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA5F23221A3D77005D0BAD /* Forgot.swift */; };
 		9CEA5F26221A3DD8005D0BAD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA5F25221A3DD8005D0BAD /* Register.swift */; };
 		9CEA5F28221A3E0B005D0BAD /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA5F27221A3E0B005D0BAD /* Login.swift */; };
@@ -40,6 +43,9 @@
 		9C48C5EE223FE4BD009C965D /* PlasticChoosed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasticChoosed.swift; sourceTree = "<group>"; };
 		9C48C5F0223FE4D3009C965D /* GlassChoosed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassChoosed.swift; sourceTree = "<group>"; };
 		9C8C4AFA2236080C00F91B38 /* contest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contest.swift; sourceTree = "<group>"; };
+		9CCC8B01223FF5A8005009DA /* PaperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperCell.swift; sourceTree = "<group>"; };
+		9CCC8B03223FFFEF005009DA /* PlasticCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasticCell.swift; sourceTree = "<group>"; };
+		9CCC8B052240001C005009DA /* GlassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCell.swift; sourceTree = "<group>"; };
 		9CEA5F23221A3D77005D0BAD /* Forgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forgot.swift; sourceTree = "<group>"; };
 		9CEA5F25221A3DD8005D0BAD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		9CEA5F27221A3E0B005D0BAD /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -101,7 +107,6 @@
 				DECFA8E01DD0C96400ABF47D /* AppDelegate.swift */,
 				9CFDE5BA2200B5D6007BE4CB /* Parceiros.swift */,
 				DECFA8E21DD0C96400ABF47D /* FirstViewController.swift */,
-				DECFA8E41DD0C96400ABF47D /* SecondViewController.swift */,
 				DECFA8E91DD0C96400ABF47D /* Assets.xcassets */,
 				DECFA8E61DD0C96400ABF47D /* Main.storyboard */,
 				DECFA8EB1DD0C96400ABF47D /* LaunchScreen.storyboard */,
@@ -115,9 +120,13 @@
 				9C0781E12236E1EA005EBA65 /*  ScannerViewController.swift */,
 				9C0781E32236FE21005EBA65 /* Question.swift */,
 				9C48C5EA223F9C99009C965D /* MyCollectionViewCell.swift */,
+				DECFA8E41DD0C96400ABF47D /* SecondViewController.swift */,
 				9C48C5EC223FE4A3009C965D /* PaperChoosed.swift */,
+				9CCC8B01223FF5A8005009DA /* PaperCell.swift */,
 				9C48C5EE223FE4BD009C965D /* PlasticChoosed.swift */,
+				9CCC8B03223FFFEF005009DA /* PlasticCell.swift */,
 				9C48C5F0223FE4D3009C965D /* GlassChoosed.swift */,
+				9CCC8B052240001C005009DA /* GlassCell.swift */,
 			);
 			path = tabbedApp;
 			sourceTree = "<group>";
@@ -259,6 +268,7 @@
 			files = (
 				9C48C5EF223FE4BD009C965D /* PlasticChoosed.swift in Sources */,
 				DECFA8E51DD0C96400ABF47D /* SecondViewController.swift in Sources */,
+				9CCC8B02223FF5A8005009DA /* PaperCell.swift in Sources */,
 				9CFDE5BB2200B5D6007BE4CB /* Parceiros.swift in Sources */,
 				9C48C5EB223F9C99009C965D /* MyCollectionViewCell.swift in Sources */,
 				9C0781E22236E1EA005EBA65 /*  ScannerViewController.swift in Sources */,
@@ -270,7 +280,9 @@
 				9CEA5F26221A3DD8005D0BAD /* Register.swift in Sources */,
 				DECFA8E11DD0C96400ABF47D /* AppDelegate.swift in Sources */,
 				DECFA8E31DD0C96400ABF47D /* FirstViewController.swift in Sources */,
+				9CCC8B04223FFFEF005009DA /* PlasticCell.swift in Sources */,
 				9C0781E42236FE21005EBA65 /* Question.swift in Sources */,
+				9CCC8B062240001C005009DA /* GlassCell.swift in Sources */,
 				9CEA5F28221A3E0B005D0BAD /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
