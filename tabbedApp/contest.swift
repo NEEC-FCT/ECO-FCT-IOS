@@ -25,6 +25,7 @@ class contest: UIViewController , UITableViewDelegate , UITableViewDataSource {
     {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         cell.textLabel?.text = list[indexPath.row]
+        cell.imageView?.image = UIImage(named: "lixo")
         
         return(cell)
     }
