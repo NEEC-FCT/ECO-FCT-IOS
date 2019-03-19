@@ -11,10 +11,15 @@ import UIKit
 import AVFoundation
 
 
-class contest: UIViewController , UITableViewDelegate , UITableViewDataSource {
+class contest: UIViewController ,  UITableViewDelegate , UITableViewDataSource {
     
-  
-    let list = ["Milk", "Honey", "Bread", "Tacos", "Tomatoes"]
+    @IBOutlet weak var NomeLabel: UILabel!
+    @IBOutlet weak var PontosLabel: UILabel!
+    @IBOutlet weak var posicaoLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var trofeuLabel: UILabel!
+    
+    var list = [""]
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -34,12 +39,6 @@ class contest: UIViewController , UITableViewDelegate , UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
         self.hideKeyboardWhenTappedAround()
         // Dispose of any resources that can be recreated.
         //Pedido
@@ -50,7 +49,7 @@ class contest: UIViewController , UITableViewDelegate , UITableViewDataSource {
         request.httpMethod = "POST"
         
         
-
+        
         var postString =   "&email=" + UserDefaults.standard.string(forKey: "EMAIL")!
         postString =   postString + "&token=" + UserDefaults.standard.string(forKey: "TOKEN")!
         
@@ -82,10 +81,38 @@ class contest: UIViewController , UITableViewDelegate , UITableViewDataSource {
             
             print("responseString = \(responseString!)")
             
-         
+        DispatchQueue.main.asyncAfter(deadline: .now() ) {
+                // your code here
+          
+            print("Pontos")
+            print(dict?["pontos"] as! String )
+            self.NomeLabel.text =  "Nome: " + ( dict?["nome"] as! String )
+            self.trofeuLabel.text = "Pontos: " + (dict?["pontos"] as! String )
+            self.posicaoLabel.text = "Posição: " + String(dict?["pos"] as! Int )
+           
+            self.list.insert((dict?["1"] as! String ), at: 0)
+            self.list.insert((dict?["2"] as! String ), at: 1)
+            self.list.insert((dict?["3"] as! String ), at: 2)
+            self.list.insert((dict?["4"] as! String ), at: 3)
+            self.list.insert((dict?["5"] as! String ), at: 4)
+            self.list.insert((dict?["6"] as! String ), at: 5)
+            self.list.insert((dict?["7"] as! String ), at: 6)
+            self.list.insert((dict?["8"] as! String ), at: 7)
+            self.list.insert((dict?["9"] as! String ), at: 8)
+            self.list.insert((dict?["10"] as! String ), at: 9)
+            self.list.insert((dict?["11"] as! String ), at: 10)
+          
+            self.tableView.reloadData()
+            }
+          
         }
         task.resume()
         
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+       
         
     }
     

@@ -12,6 +12,10 @@ import UIKit
 class Forgot: UIViewController {
     
     @IBOutlet weak var emailLabel: UITextField!
+    
+    
+    
+    
     @IBAction func SendClicked(_ sender: Any) {
         
         //email tem arruba

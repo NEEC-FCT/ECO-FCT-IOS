@@ -15,7 +15,9 @@ class  PaperChoosed: UIViewController  , UICollectionViewDataSource, UICollectio
     
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var descricao = ["Embalagens de cartão e papel" , "Embalagens contaminadas com substâncias perigosas " , "Jornais,Revistas" ,"Resíduos orgânicos" ,"Papel de escrita e impresso" , "Guardanapos e lenços de papel" , "Sacos de papel" , "Loiça de papel" , "Livros / Cadernos (sem argolas)" , "Papel sujo ou húmido " , "" , "Papel vegetal, de alumínio, encerado ou com plástico " , "" , "Embalagens de cartão com gordura" , "" ,"Toalhetes e fraldas " , "" , "Autocolantes"  , "Voltar" ]
+    var descricao = [  "Deposite" , "Não Deposite" , "Embalagens de cartão e papel" , "Embalagens contaminadas com substâncias perigosas " , "Jornais,Revistas" ,"Resíduos orgânicos" ,"Papel de escrita e impresso" , "Guardanapos e lenços de papel" , "Sacos de papel" , "Loiça de papel" , "Livros / Cadernos (sem argolas)" , "Papel sujo ou húmido " , "" , "Papel vegetal, de alumínio, encerado ou com plástico " , "" , "Embalagens de cartão com gordura" , "" ,"Toalhetes e fraldas " , "" , "Autocolantes"  , "Voltar" ]
+    
+        var cores = [  "#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ]
     
     
     // MARK: - UICollectionViewDataSource protocol
@@ -32,9 +34,13 @@ class  PaperChoosed: UIViewController  , UICollectionViewDataSource, UICollectio
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! PaperCell
         
         //Set na celu
+        if(self.descricao[indexPath.item].count < 3){
+            cell.myLabel.isHidden = true
+        }
+        else{
         cell.myLabel.text = self.descricao[indexPath.item]
-        cell.myLabel.backgroundColor = UIColor(hexString: "#e5f71b" )
-
+       cell.myLabel.backgroundColor = UIColor(hexString: self.cores[indexPath.item]  )
+        }
         
         return cell
     }
@@ -44,13 +50,12 @@ class  PaperChoosed: UIViewController  , UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
-         if(indexPath.item == 18){
             DispatchQueue.main.async(){
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "starter")
                 self.present(newViewController, animated: false, completion: nil)
             }
-        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

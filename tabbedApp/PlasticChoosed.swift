@@ -15,8 +15,12 @@ class  PlasticChoosed: UIViewController  , UICollectionViewDataSource, UICollect
     
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var descricao = ["Garrafas e garrafões de plástico (água, sumos, óleos alimentares, detergentes)",
+    var descricao = [  "Deposite" , "Não Deposite" , "Garrafas e garrafões de plástico (água, sumos, óleos alimentares, detergentes)",
                      "Embalagens contaminadas com substâncias perigosas" , "Sacos e filme de plásticos limpos" , "Garrafões de combustível" , "Embalagens de plástico e metal" ,"Cassetes de vídeo, canetas, CD e DVD" , "Latas de bebida e conserva" , "Caixas de cartão" , "Pacotes de leite e sumos" , "Toalhetes e fraldas" , "Embalagens de iogurte" , "Eletrodomésticos, pilhas e baterias"  , "Aerossóis (sprays)" , "Pratos e talheres de plástico" , "Esferovite" , "Objetos de metal que não sejam embalagens", "" , "Brinquedos" , "Voltar"]
+    
+    var cores = [  "#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ]
+    
+    
     
     
     // MARK: - UICollectionViewDataSource protocol
@@ -33,9 +37,14 @@ class  PlasticChoosed: UIViewController  , UICollectionViewDataSource, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! PlasticCell
         
         //Set na celu
+        //Set na celula
+        if(self.descricao[indexPath.item].count < 3){
+            cell.myLabel.isHidden = true
+        }
+        else{
         cell.myLabel.text = self.descricao[indexPath.item]
-        cell.myLabel.backgroundColor = UIColor(hexString: "#e5f71b" )
-        
+        cell.myLabel.backgroundColor = UIColor(hexString: self.cores[indexPath.item]  )
+        }
         
         return cell
     }
@@ -45,12 +54,12 @@ class  PlasticChoosed: UIViewController  , UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
-        if(indexPath.item == 18){
+       
             DispatchQueue.main.async(){
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "starter")
                 self.present(newViewController, animated: false, completion: nil)
-            }
+            
         }
     }
     

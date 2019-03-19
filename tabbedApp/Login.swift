@@ -100,6 +100,7 @@ class Login: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         let defaults = UserDefaults.standard
         let dictionary = defaults.dictionaryRepresentation()

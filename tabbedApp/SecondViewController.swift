@@ -32,6 +32,7 @@ extension UIColor {
 
 
 import UIKit
+import MessageUI
 
 class SecondViewController: UIViewController  , UICollectionViewDataSource, UICollectionViewDelegate  , UICollectionViewDelegateFlowLayout{
 
@@ -65,18 +66,25 @@ class SecondViewController: UIViewController  , UICollectionViewDataSource, UICo
     
     
     func openMail(email:String){
-        if let url = URL(string: "mailto:\(email)") {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
+   DispatchQueue.main.asyncAfter(deadline: .now() ) {
+    let url = NSURL(string: "mailto:your_mail_here@mail.com")
+    
+    if #available(iOS 10.0, *) {
+        UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+    } else {
+        // Fallback on earlier versions
+        UIApplication.shared.openURL(url! as URL)
+    }
         }
     }
     
   
     
     func showWarning( mensagem:String , email:String){
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() ) {
+            // your code here
+        
         let alert = UIAlertController(title: "", message: mensagem, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style{
@@ -91,23 +99,9 @@ class SecondViewController: UIViewController  , UICollectionViewDataSource, UICo
                 
                 
             }}))
-        alert.addAction(UIAlertAction(title: "Já tenho", style: .default, handler: { action in
-            switch action.style{
-            case .default:
-                print("default")
-                self.openMail(email: email)
-                
-            case .cancel:
-                print("cancel")
-                self.openMail(email: email)
-                
-            case .destructive:
-                print("destructive")
-                self.openMail(email: email)
-                
-                
-            }}))
+       
         self.present(alert, animated: true, completion: nil)
+        }
     }
 
     // MARK: - UICollectionViewDelegate protocol
@@ -138,16 +132,25 @@ class SecondViewController: UIViewController  , UICollectionViewDataSource, UICo
             }
         }
         else  if(indexPath.item == 3){
-            guard let url = URL(string: "https://bd2.fct.unl.pt/v7/downloads/dat/ef025_03_entrega_res_perigosos_0118.pdf ") else { return }
-            UIApplication.shared.open(url)
+         
+            
+            guard let url = URL(string: "https://bd2.fct.unl.pt/v7/downloads/dat/ef025_03_entrega_res_perigosos_0118.pdf") else {
+                return //be safe
+            }
+            
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
         }
         else  if(indexPath.item == 4){
             
-             showWarning( mensagem: "Solicite à Direção o abate do equipamento" , email: "div.at.sg.helpdesk@fct.unl.pt")
+             showWarning( mensagem: "Solicite à Direção o abate do equipamento e peça a div.at.sg.helpdesk@fct.unl.pt " , email: "div.at.sg.helpdesk@fct.unl.pt para recolha" )
            
         }
         else  if(indexPath.item == 5){
-             showWarning( mensagem: "Coloque a lâmpada usada inteira na embalagem de cartão da lâmpada nova" , email: "div.at.sg.helpdesk@fct.unl.pt")
+             showWarning( mensagem: "Coloque a lâmpada usada inteira na embalagem de cartão da lâmpada nova e peça a div.at.sg.helpdesk@fct.unl.pt " , email: "div.at.sg.helpdesk@fct.unl.pt para recolha" )
            
         }
         else  if(indexPath.item == 6){
@@ -156,7 +159,7 @@ class SecondViewController: UIViewController  , UICollectionViewDataSource, UICo
             
         }
         else  if(indexPath.item == 7){
-            showWarning( mensagem: "Solicite à Direção o abate do equipamento" , email: "div.at.sg.helpdesk@fct.unl.pt")
+            showWarning( mensagem: "Solicite à Direção o abate do equipamento " , email: "div.at.sg.helpdesk@fct.unl.pt")
             
         }
         else  if(indexPath.item == 8){

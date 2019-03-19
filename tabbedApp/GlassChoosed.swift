@@ -15,7 +15,9 @@ class  GlassChoosed: UIViewController  , UICollectionViewDataSource, UICollectio
     
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var descricao = [ "Garrafas" , "Embalagens contaminadas com substâncias perigosas" , "Frascos" , "Loiças, pirex e cerâmicas" , "Garrafões" , "Vidros planos" , "Boiões" , "Janelas, vidraças e pára brisas" , ""  ,  "Vidros especiais"   , "" ,  "Lâmpadas" , "" ,  "Espelhos e cristais" , "" ,"Vidros corados e cerâmicos" , "" ,"Embalagens de medicamentos" , "" ,"Rolhas" , "Voltar"]
+    var descricao = [ "Deposite" , "Não Deposite" , "Garrafas" , "Embalagens contaminadas com substâncias perigosas" , "Frascos" , "Loiças, pirex e cerâmicas" , "Garrafões" , "Vidros planos" , "Boiões" , "Janelas, vidraças e pára brisas" , ""  ,  "Vidros especiais"   , "" ,  "Lâmpadas" , "" ,  "Espelhos e cristais" , "" ,"Vidros corados e cerâmicos" , "" ,"Embalagens de medicamentos" , "" ,"Rolhas" , "Voltar"]
+    
+        var cores = [  "#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ,"#962525" , "#4286f4" ]
     
     
     // MARK: - UICollectionViewDataSource protocol
@@ -31,9 +33,15 @@ class  GlassChoosed: UIViewController  , UICollectionViewDataSource, UICollectio
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! GlassCell
         
-        //Set na celu
-        cell.myLabel.text = self.descricao[indexPath.item]
-        cell.myLabel.backgroundColor = UIColor(hexString: "#e5f71b" )
+        //Set na celula
+        if(self.descricao[indexPath.item].count < 3){
+            cell.myLabel.isHidden = true
+        }
+        else{
+            cell.myLabel.text = self.descricao[indexPath.item]
+           cell.myLabel.backgroundColor = UIColor(hexString: self.cores[indexPath.item]  )
+        }
+       
         
         
         return cell
@@ -44,13 +52,13 @@ class  GlassChoosed: UIViewController  , UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
-        if(indexPath.item == 20){
+     
             DispatchQueue.main.async(){
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "starter")
                 self.present(newViewController, animated: false, completion: nil)
             }
-        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

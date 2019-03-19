@@ -9,12 +9,26 @@
 import Foundation
 import UIKit
 
-class Register: UIViewController {
+class Register: UIViewController , UIGestureRecognizerDelegate {
     
     @IBOutlet weak var nomeLabel: UITextField!
     @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var passLabel: UITextField!
+    @IBOutlet weak var eulaLabel: UILabel!
+    @IBOutlet weak var RegulamentoLabel: UILabel!
     
+    @IBAction func regulamentoClicked(_ sender: Any) {
+        
+        guard let url = URL(string: "https://drive.google.com/file/d/1u0SV23Ba0pcJ1zjxYMJbHbg2wxJ-7DPO/view?usp=sharing") else {
+            return //be safe
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
     
     @IBAction func RegisterClicked(_ sender: Any) {
         
@@ -127,16 +141,23 @@ class Register: UIViewController {
     }
     
     
+   
+
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+        
+       
+
         
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        self.hideKeyboardWhenTappedAround()
+    
         // Dispose of any resources that can be recreated.
     }
     
