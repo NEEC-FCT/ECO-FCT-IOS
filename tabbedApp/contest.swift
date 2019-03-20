@@ -36,12 +36,48 @@ class contest: UIViewController ,  UITableViewDelegate , UITableViewDataSource {
     }
 
     
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Necessita login
+    if(  UserDefaults.standard.string(forKey: "EMAIL")  == nil ){
+        let alertController = UIAlertController(title: "Alerta", message: "Necessita de Login", preferredStyle: .alert)
+        
+        let action1 = UIAlertAction(title: "Voltar", style: .default) { (action:UIAlertAction) in
+            print("You've pressed Voltar");
+            
+                DispatchQueue.main.async(){
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "starter")
+                    self.present(newViewController, animated: false, completion: nil)
+                }
+            
+        }
+        
+        let action2 = UIAlertAction(title: "Login", style: .cancel) { (action:UIAlertAction) in
+            print("You've pressed Login");
+           
+                DispatchQueue.main.async(){
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "NavLogin")
+                    self.present(newViewController, animated: false, completion: nil)
+                }
+            
+        }
+        
+        
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+     
+        self.present(alertController, animated: true, completion: nil)
+          }
+    
         
         self.hideKeyboardWhenTappedAround()
         // Dispose of any resources that can be recreated.
         //Pedido
+         if(  UserDefaults.standard.string(forKey: "EMAIL")  != nil ){
         NSLog("Pedido")
         let url = URL(string: "https://ecoapp.neec-fct.com/getStatus.php")!
         var request = URLRequest(url: url)
@@ -107,6 +143,7 @@ class contest: UIViewController ,  UITableViewDelegate , UITableViewDataSource {
           
         }
         task.resume()
+        }
         
     }
     

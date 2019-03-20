@@ -107,6 +107,11 @@ class FirstViewController: UIViewController {
         }
     }
     
+    
+
+    
+   
+    
     override func viewDidLoad() {
         
       
@@ -143,12 +148,47 @@ class FirstViewController: UIViewController {
         
         
         actionButton.addItem(title: "Scan", image: UIImage(named: "qrcode")?.withRenderingMode(.alwaysTemplate)) { item in
+            
+            if(  UserDefaults.standard.string(forKey: "EMAIL")  == nil ){
+                let alertController = UIAlertController(title: "Alerta", message: "Necessita de Login", preferredStyle: .alert)
+                
+                let action1 = UIAlertAction(title: "Voltar", style: .default) { (action:UIAlertAction) in
+                    print("You've pressed Voltar");
+                    
+                    DispatchQueue.main.async(){
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "starter")
+                        self.present(newViewController, animated: false, completion: nil)
+                    }
+                    
+                }
+                
+                let action2 = UIAlertAction(title: "Login", style: .cancel) { (action:UIAlertAction) in
+                    print("You've pressed Login");
+                    
+                    DispatchQueue.main.async(){
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "NavLogin")
+                        self.present(newViewController, animated: false, completion: nil)
+                    }
+                    
+                }
+                
+                
+                alertController.addAction(action1)
+                alertController.addAction(action2)
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
+            else  {
             DispatchQueue.main.async {
                 
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "qrreader")
                 self.present(newViewController, animated: true, completion: nil)
                 
+              }
             }
         }
         
@@ -164,15 +204,9 @@ class FirstViewController: UIViewController {
             actionButton.display(inViewController: self)
         }
         
-        if(  UserDefaults.standard.string(forKey: "EMAIL")  == nil ){
-            DispatchQueue.main.async(){
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let newViewController = storyBoard.instantiateViewController(withIdentifier: "NavLogin")
-                self.present(newViewController, animated: false, completion: nil)
-            }
-        }
+      
             
-        else{
+    
             
             super.viewDidLoad()
             let span:MKCoordinateSpan = MKCoordinateSpanMake( 0.008 , 0.008)
@@ -188,7 +222,7 @@ class FirstViewController: UIViewController {
             print(TrashPoint)
             print(ContainerPoint)
             //}
-        }
+        
     }
 
     //Adiciona o lixo
