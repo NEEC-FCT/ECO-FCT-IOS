@@ -6,86 +6,82 @@
 //  Copyright © 2017 MAGNUMIUM. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import AVFoundation
+import UIKit
 
-class  ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
-
-    var video = AVCaptureVideoPreviewLayer()
+    // カメラやマイクの入出力を管理するオブジェクトを生成
+    private let session = AVCaptureSession()
+    
+    
+    @objc func backButtonPressed() {
+        dismiss(animated: true, completion: nil)
+        //        navigationController?.popViewController(animated: true)
+    }
+    
+    func makeBackButton() -> UIButton {
+        let backButtonImage = UIImage(named: "backbutton")?.withRenderingMode(.alwaysTemplate)
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(backButtonImage, for: .normal)
+        backButton.tintColor = .blue
+        backButton.setTitle("  Back", for: .normal)
+        backButton.setTitleColor(.blue, for: .normal)
+        backButton.addTarget(self, action: #selector(self.backButtonPressed), for: .touchUpInside)
+        return backButton
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         
-        //Creating session
-        let session = AVCaptureSession()
+        // カメラやマイクのデバイスそのものを管理するオブジェクトを生成（ここではワイドアングルカメラ・ビデオ・背面カメラを指定）
+        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera],
+                                                                mediaType: .video,
+                                                                position: .back)
         
-        //Define capture devcie
-        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        // ワイドアングルカメラ・ビデオ・背面カメラに該当するデバイスを取得
+        let devices = discoverySession.devices
         
-        do
-        {
-            let input = try AVCaptureDeviceInput(device: captureDevice)
-            session.addInput(input)
-        }
-        catch
-        {
-            print ("ERROR")
-        }
+        self.view.backgroundColor = .blue
+        self.navigationItem.title = title
+        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: makeBackButton())
         
-        let output = AVCaptureMetadataOutput()
-        session.addOutput(output)
         
-        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        
-        output.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
-        
-        video = AVCaptureVideoPreviewLayer(session: session)
-        video.frame = view.layer.bounds
-        view.layer.addSublayer(video)
-        
-     
-        session.startRunning()
-    }
-    
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        
-        if metadataObjects != nil && metadataObjects.count != 0
-        {
-            if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject
-            {
-                if object.type == AVMetadataObjectTypeQRCode
-                {
+        //　該当するデバイスのうち最初に取得したものを利用する
+        if let backCamera = devices.first {
+            do {
+                // QRコードの読み取りに背面カメラの映像を利用するための設定
+                let deviceInput = try AVCaptureDeviceInput(device: backCamera)
+                
+                if self.session.canAddInput(deviceInput) {
+                    self.session.addInput(deviceInput)
                     
-                    //Got Key
-                    UserDefaults.standard.set( object.stringValue , forKey: "loginJSONValue")
-                    //Send next view
-                    DispatchQueue.main.async {
+                    // 背面カメラの映像からQRコードを検出するための設定
+                    let metadataOutput = AVCaptureMetadataOutput()
+                    
+                    if self.session.canAddOutput(metadataOutput) {
+                        self.session.addOutput(metadataOutput)
                         
-                        let alertController = UIAlertController(title: "Alert", message: "Success", preferredStyle: .alert)
+                        metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+                        metadataOutput.metadataObjectTypes = [.qr]
                         
-                        let action1 = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
-                            print("You've pressed default");
-                            //go to storyboard
-                            sleep(2)
-                            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                            let newViewController = storyBoard.instantiateViewController(withIdentifier: "question")
-                            self.present(newViewController, animated: true, completion: nil)
-                        }
+                        // 背面カメラの映像を画面に表示するためのレイヤーを生成
+                        let previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
+                        previewLayer.frame = self.view.bounds
+                        previewLayer.videoGravity = .resizeAspectFill
+                        self.view.layer.addSublayer(previewLayer)
                         
-                        
-                        
-                        alertController.addAction(action1)
-                        
-                        self.present(alertController, animated: true, completion: nil)
-          
-                        
+                        // 読み取り開始
+                        self.session.startRunning()
                     }
-                    
-
-                 
                 }
+            } catch {
+                print("Error occured while creating video device input: \(error)")
             }
         }
     }
@@ -95,6 +91,57 @@ class  ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
         // Dispose of any resources that can be recreated.
     }
     
-    
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
+            // QRコードのデータかどうかの確認
+            if metadata.type != .qr { continue }
+            
+            // QRコードの内容が空かどうかの確認
+            if metadata.stringValue == nil { continue }
+            
+            /*
+             このあたりで取得したQRコードを使ってゴニョゴニョする
+             読み取りの終了・再開のタイミングは用途によって制御が異なるので注意
+             以下はQRコードに紐づくWebサイトをSafariで開く例
+             */
+            
+            // URLかどうかの確認
+            if let url = URL(string: metadata.stringValue!) {
+                // 読み取り終了
+                self.session.stopRunning()
+                // QRコードに紐付いたURLをSafariで開く
+                //UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                
+                //Got Key
+                UserDefaults.standard.set( metadata.stringValue! , forKey: "loginJSONValue")
+                //Send next view
+                DispatchQueue.main.async {
+                    
+                    let alertController = UIAlertController(title: "Alert", message: "Success", preferredStyle: .alert)
+                    
+                    let action1 = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                        print("You've pressed default");
+                        //go to storyboard
+                        sleep(2)
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "question")
+                        self.present(newViewController, animated: true, completion: nil)
+                    }
+                    
+                    
+                    
+                    alertController.addAction(action1)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                    
+                }
+                
+                break
+            }
+        }
+    }
 }
+
+
 

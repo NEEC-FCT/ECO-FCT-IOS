@@ -69,10 +69,10 @@ class FirstViewController: UIViewController {
     }
     
     func setMap(point:MKPointAnnotation){
-        let span:MKCoordinateSpan = MKCoordinateSpanMake( 0.0008 , 0.0008)
+        let span:MKCoordinateSpan = MKCoordinateSpan( latitudeDelta: 0.0008 , longitudeDelta: 0.0008)
         let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(point.coordinate.latitude,  point.coordinate.longitude)
         
-        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        let region:MKCoordinateRegion = MKCoordinateRegion(center: location, span: span)
         map.setRegion(region, animated: true)
     }
 
@@ -101,7 +101,7 @@ class FirstViewController: UIViewController {
         if currentLocation == nil {
             // Zoom to user location
             if let userLocation = locations.last {
-                let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 2000, 2000)
+                let viewRegion = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
                 map.setRegion(viewRegion, animated: false)
             }
         }
@@ -209,10 +209,10 @@ class FirstViewController: UIViewController {
     
             
             super.viewDidLoad()
-            let span:MKCoordinateSpan = MKCoordinateSpanMake( 0.008 , 0.008)
+        let span:MKCoordinateSpan = MKCoordinateSpan( latitudeDelta: 0.008 , longitudeDelta: 0.008)
             let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(38.661307,  -9.207192)
             
-            let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        let region:MKCoordinateRegion = MKCoordinateRegion(center: location, span: span)
             map.setRegion(region, animated: true)
             
             EcoPointInit()
