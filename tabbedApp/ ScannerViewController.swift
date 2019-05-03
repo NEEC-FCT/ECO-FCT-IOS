@@ -32,6 +32,16 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         return backButton
     }
     
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        DispatchQueue.main.async {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "starter")
+            self.present(newViewController, animated: true, completion: nil)
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +59,18 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         self.view.backgroundColor = .blue
         self.navigationItem.title = title
         self.navigationController?.navigationBar.barTintColor = .white
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: makeBackButton())
+        
+        //imagem para voltar
+        let imageName = "close-icon"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        
+        imageView.frame = CGRect(x: 10, y: 20, width: 50, height: 50)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+        view.addSubview(imageView)
+        
         
         
         //　該当するデバイスのうち最初に取得したものを利用する
@@ -75,6 +96,21 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                         previewLayer.frame = self.view.bounds
                         previewLayer.videoGravity = .resizeAspectFill
                         self.view.layer.addSublayer(previewLayer)
+                        
+                        imageView.frame = CGRect(x: 10, y: 35, width: 50, height: 50)
+                        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+                        imageView.isUserInteractionEnabled = true
+                        imageView.addGestureRecognizer(tapGestureRecognizer)
+                        view.addSubview(imageView)
+                        
+                        
+                        //mira
+                        let mainImage = UIImage(named:"aim")
+                        let mainImageView = UIImageView(image:mainImage)
+                        mainImageView.center = self.view.center
+                        mainImageView.contentMode = .scaleAspectFit
+                        self.view.addSubview(mainImageView)
+                        
                         
                         // 読み取り開始
                         self.session.startRunning()
