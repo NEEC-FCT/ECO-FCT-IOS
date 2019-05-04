@@ -50,6 +50,7 @@ class  PaperChoosed: UIViewController  , UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+         UserDefaults.standard.set( 4  , forKey: "ZOOM")
             DispatchQueue.main.async(){
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "starter")

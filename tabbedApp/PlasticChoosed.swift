@@ -55,10 +55,12 @@ class  PlasticChoosed: UIViewController  , UICollectionViewDataSource, UICollect
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
        
+         UserDefaults.standard.set( 1  , forKey: "ZOOM")
             DispatchQueue.main.async(){
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "starter")
                 self.present(newViewController, animated: false, completion: nil)
+                
             
         }
     }

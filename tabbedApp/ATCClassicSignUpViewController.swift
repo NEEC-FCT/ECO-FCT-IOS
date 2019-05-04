@@ -262,7 +262,7 @@ class ATCClassicSignUpViewController: UIViewController {
         } else {
             UIApplication.shared.openURL(url)
         }
-        print("tap working")
+       
     }
     
     func display(alertController: UIAlertController) {

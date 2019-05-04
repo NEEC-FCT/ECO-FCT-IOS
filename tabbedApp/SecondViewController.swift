@@ -164,6 +164,8 @@ class SecondViewController: UIViewController  , UICollectionViewDataSource, UICo
         }
         else  if(indexPath.item == 8){
            //abrir o mapa
+            UserDefaults.standard.set( 2  , forKey: "ZOOM")
+            
             DispatchQueue.main.async(){
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "starter")

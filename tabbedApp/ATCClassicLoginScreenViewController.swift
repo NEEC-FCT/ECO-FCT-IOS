@@ -163,7 +163,7 @@ class ATCClassicLoginScreenViewController: UIViewController {
             if( dict?["success"]  as! Int == 1 ){
                 print( "Vou mudar " )
                 
-                UserDefaults.standard.set(dict?["email"]  as! String, forKey: "EMAIL")
+                
                 UserDefaults.standard.set( dict?["token"]  as! String, forKey: "TOKEN")
                 
                 //go to storyboard

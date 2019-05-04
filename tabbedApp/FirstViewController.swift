@@ -142,6 +142,9 @@ class FirstViewController: UIViewController {
         
       
         
+       
+        
+        
         locationManager = CLLocationManager()
         locationManager.delegate = self as? CLLocationManagerDelegate
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -257,6 +260,22 @@ class FirstViewController: UIViewController {
             print(TrashPoint)
             print(ContainerPoint)
             //}
+        
+        let change =   UserDefaults.standard.integer(forKey: "ZOOM")
+        
+        UserDefaults.standard.set( 0  , forKey: "ZOOM")
+        if(change == 1){
+            self.getClosestAmareloPoint()
+        }
+        else if(change == 2){
+            self.getClosestTrash()
+        }
+        else if(change == 3){
+            self.getClosestEcoPoint()
+        }
+        else if(change == 4){
+            self.getClosestContainer()
+        }
         
     }
 
