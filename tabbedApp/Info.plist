@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Para ser possível localizar o contentor mais próximo é necessário ter acesso ao GPS</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Para ser possível localizar o contentor mais próximo é necessário ter acesso ao GPS</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -21,11 +17,17 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>5.0</string>
+	<string>6.0</string>
 	<key>CFBundleVersion</key>
-	<string>5.0</string>
+	<string>6.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Precisamos para ler os código QR</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Para ser possível localizar o contentor mais próximo é necessário ter acesso ao GPS</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Para ser possível localizar o contentor mais próximo é necessário ter acesso ao GPS</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -50,7 +52,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>Precisamos para ler os código QR</string>
 </dict>
 </plist>

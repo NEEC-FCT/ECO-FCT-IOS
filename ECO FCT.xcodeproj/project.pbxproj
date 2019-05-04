@@ -15,13 +15,22 @@
 		9C48C5ED223FE4A3009C965D /* PaperChoosed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48C5EC223FE4A3009C965D /* PaperChoosed.swift */; };
 		9C48C5EF223FE4BD009C965D /* PlasticChoosed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48C5EE223FE4BD009C965D /* PlasticChoosed.swift */; };
 		9C48C5F1223FE4D3009C965D /* GlassChoosed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48C5F0223FE4D3009C965D /* GlassChoosed.swift */; };
+		9C4C5D5A227DD6B500F820B9 /* ATCClassicLoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C5D58227DD6B400F820B9 /* ATCClassicLoginScreenViewController.swift */; };
+		9C4C5D62227DD75200F820B9 /* UIViewController+ATCAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C5D5C227DD75100F820B9 /* UIViewController+ATCAdditions.swift */; };
+		9C4C5D63227DD75200F820B9 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C5D5D227DD75100F820B9 /* UIImage.swift */; };
+		9C4C5D64227DD75200F820B9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C5D5E227DD75200F820B9 /* UITextField.swift */; };
+		9C4C5D65227DD75200F820B9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C5D5F227DD75200F820B9 /* UIButton.swift */; };
+		9C4C5D66227DD75200F820B9 /* ATCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C5D60227DD75200F820B9 /* ATCTextField.swift */; };
+		9C4C5D67227DD75200F820B9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C5D61227DD75200F820B9 /* UIColor.swift */; };
+		9C4C5D69227DD90100F820B9 /* ATCClassicLoginScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4C5D68227DD90100F820B9 /* ATCClassicLoginScreenViewController.xib */; };
+		9C4C5D6C227DDC2000F820B9 /* ATCClassicSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4C5D6A227DDC1F00F820B9 /* ATCClassicSignUpViewController.xib */; };
+		9C4C5D6D227DDC2000F820B9 /* ATCClassicSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C5D6B227DDC2000F820B9 /* ATCClassicSignUpViewController.swift */; };
+		9C4C5D70227DE40600F820B9 /* ATCClassicForgotScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4C5D6E227DE40600F820B9 /* ATCClassicForgotScreenViewController.xib */; };
+		9C4C5D71227DE40600F820B9 /* ATCClassicForgotScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C5D6F227DE40600F820B9 /* ATCClassicForgotScreenViewController.swift */; };
 		9C8C4AFB2236080C00F91B38 /* contest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8C4AFA2236080C00F91B38 /* contest.swift */; };
 		9CCC8B02223FF5A8005009DA /* PaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC8B01223FF5A8005009DA /* PaperCell.swift */; };
 		9CCC8B04223FFFEF005009DA /* PlasticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC8B03223FFFEF005009DA /* PlasticCell.swift */; };
 		9CCC8B062240001C005009DA /* GlassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC8B052240001C005009DA /* GlassCell.swift */; };
-		9CEA5F24221A3D77005D0BAD /* Forgot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA5F23221A3D77005D0BAD /* Forgot.swift */; };
-		9CEA5F26221A3DD8005D0BAD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA5F25221A3DD8005D0BAD /* Register.swift */; };
-		9CEA5F28221A3E0B005D0BAD /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA5F27221A3E0B005D0BAD /* Login.swift */; };
 		9CFDE5B92200A146007BE4CB /* NEEC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFDE5B82200A146007BE4CB /* NEEC.swift */; };
 		9CFDE5BB2200B5D6007BE4CB /* Parceiros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFDE5BA2200B5D6007BE4CB /* Parceiros.swift */; };
 		DECFA8E11DD0C96400ABF47D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFA8E01DD0C96400ABF47D /* AppDelegate.swift */; };
@@ -42,13 +51,22 @@
 		9C48C5EC223FE4A3009C965D /* PaperChoosed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperChoosed.swift; sourceTree = "<group>"; };
 		9C48C5EE223FE4BD009C965D /* PlasticChoosed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasticChoosed.swift; sourceTree = "<group>"; };
 		9C48C5F0223FE4D3009C965D /* GlassChoosed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassChoosed.swift; sourceTree = "<group>"; };
+		9C4C5D58227DD6B400F820B9 /* ATCClassicLoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCClassicLoginScreenViewController.swift; sourceTree = "<group>"; };
+		9C4C5D5C227DD75100F820B9 /* UIViewController+ATCAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ATCAdditions.swift"; sourceTree = "<group>"; };
+		9C4C5D5D227DD75100F820B9 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		9C4C5D5E227DD75200F820B9 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		9C4C5D5F227DD75200F820B9 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		9C4C5D60227DD75200F820B9 /* ATCTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCTextField.swift; sourceTree = "<group>"; };
+		9C4C5D61227DD75200F820B9 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		9C4C5D68227DD90100F820B9 /* ATCClassicLoginScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCClassicLoginScreenViewController.xib; sourceTree = "<group>"; };
+		9C4C5D6A227DDC1F00F820B9 /* ATCClassicSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCClassicSignUpViewController.xib; sourceTree = "<group>"; };
+		9C4C5D6B227DDC2000F820B9 /* ATCClassicSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCClassicSignUpViewController.swift; sourceTree = "<group>"; };
+		9C4C5D6E227DE40600F820B9 /* ATCClassicForgotScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCClassicForgotScreenViewController.xib; sourceTree = "<group>"; };
+		9C4C5D6F227DE40600F820B9 /* ATCClassicForgotScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCClassicForgotScreenViewController.swift; sourceTree = "<group>"; };
 		9C8C4AFA2236080C00F91B38 /* contest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contest.swift; sourceTree = "<group>"; };
 		9CCC8B01223FF5A8005009DA /* PaperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperCell.swift; sourceTree = "<group>"; };
 		9CCC8B03223FFFEF005009DA /* PlasticCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasticCell.swift; sourceTree = "<group>"; };
 		9CCC8B052240001C005009DA /* GlassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCell.swift; sourceTree = "<group>"; };
-		9CEA5F23221A3D77005D0BAD /* Forgot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forgot.swift; sourceTree = "<group>"; };
-		9CEA5F25221A3DD8005D0BAD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
-		9CEA5F27221A3E0B005D0BAD /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		9CFDE5B82200A146007BE4CB /* NEEC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEEC.swift; sourceTree = "<group>"; };
 		9CFDE5BA2200B5D6007BE4CB /* Parceiros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parceiros.swift; sourceTree = "<group>"; };
 		B0F57B6AD7929456A74CE87A /* Pods-ECO FCT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECO FCT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ECO FCT/Pods-ECO FCT.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,9 +131,12 @@
 				DECFA8EE1DD0C96400ABF47D /* Info.plist */,
 				9C48C5E2223EB1A2009C965D /* GoogleService-Info.plist */,
 				9CFDE5B82200A146007BE4CB /* NEEC.swift */,
-				9CEA5F23221A3D77005D0BAD /* Forgot.swift */,
-				9CEA5F25221A3DD8005D0BAD /* Register.swift */,
-				9CEA5F27221A3E0B005D0BAD /* Login.swift */,
+				9C4C5D58227DD6B400F820B9 /* ATCClassicLoginScreenViewController.swift */,
+				9C4C5D68227DD90100F820B9 /* ATCClassicLoginScreenViewController.xib */,
+				9C4C5D6F227DE40600F820B9 /* ATCClassicForgotScreenViewController.swift */,
+				9C4C5D6E227DE40600F820B9 /* ATCClassicForgotScreenViewController.xib */,
+				9C4C5D6B227DDC2000F820B9 /* ATCClassicSignUpViewController.swift */,
+				9C4C5D6A227DDC1F00F820B9 /* ATCClassicSignUpViewController.xib */,
 				9C8C4AFA2236080C00F91B38 /* contest.swift */,
 				9C0781E12236E1EA005EBA65 /*  ScannerViewController.swift */,
 				9C0781E32236FE21005EBA65 /* Question.swift */,
@@ -127,6 +148,12 @@
 				9CCC8B03223FFFEF005009DA /* PlasticCell.swift */,
 				9C48C5F0223FE4D3009C965D /* GlassChoosed.swift */,
 				9CCC8B052240001C005009DA /* GlassCell.swift */,
+				9C4C5D60227DD75200F820B9 /* ATCTextField.swift */,
+				9C4C5D5F227DD75200F820B9 /* UIButton.swift */,
+				9C4C5D61227DD75200F820B9 /* UIColor.swift */,
+				9C4C5D5D227DD75100F820B9 /* UIImage.swift */,
+				9C4C5D5E227DD75200F820B9 /* UITextField.swift */,
+				9C4C5D5C227DD75100F820B9 /* UIViewController+ATCAdditions.swift */,
 			);
 			path = tabbedApp;
 			sourceTree = "<group>";
@@ -202,7 +229,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4C5D69227DD90100F820B9 /* ATCClassicLoginScreenViewController.xib in Resources */,
 				DECFA8ED1DD0C96400ABF47D /* LaunchScreen.storyboard in Resources */,
+				9C4C5D70227DE40600F820B9 /* ATCClassicForgotScreenViewController.xib in Resources */,
+				9C4C5D6C227DDC2000F820B9 /* ATCClassicSignUpViewController.xib in Resources */,
 				DECFA8EA1DD0C96400ABF47D /* Assets.xcassets in Resources */,
 				DECFA8E81DD0C96400ABF47D /* Main.storyboard in Resources */,
 				9C48C5E3223EB1A3009C965D /* GoogleService-Info.plist in Resources */,
@@ -267,24 +297,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4C5D5A227DD6B500F820B9 /* ATCClassicLoginScreenViewController.swift in Sources */,
+				9C4C5D62227DD75200F820B9 /* UIViewController+ATCAdditions.swift in Sources */,
 				9C48C5EF223FE4BD009C965D /* PlasticChoosed.swift in Sources */,
+				9C4C5D71227DE40600F820B9 /* ATCClassicForgotScreenViewController.swift in Sources */,
+				9C4C5D64227DD75200F820B9 /* UITextField.swift in Sources */,
 				DECFA8E51DD0C96400ABF47D /* SecondViewController.swift in Sources */,
 				9CCC8B02223FF5A8005009DA /* PaperCell.swift in Sources */,
 				9CFDE5BB2200B5D6007BE4CB /* Parceiros.swift in Sources */,
+				9C4C5D63227DD75200F820B9 /* UIImage.swift in Sources */,
 				9C48C5EB223F9C99009C965D /* MyCollectionViewCell.swift in Sources */,
 				9C0781E22236E1EA005EBA65 /*  ScannerViewController.swift in Sources */,
+				9C4C5D6D227DDC2000F820B9 /* ATCClassicSignUpViewController.swift in Sources */,
 				9C48C5ED223FE4A3009C965D /* PaperChoosed.swift in Sources */,
-				9CEA5F24221A3D77005D0BAD /* Forgot.swift in Sources */,
 				9CFDE5B92200A146007BE4CB /* NEEC.swift in Sources */,
 				9C48C5F1223FE4D3009C965D /* GlassChoosed.swift in Sources */,
 				9C8C4AFB2236080C00F91B38 /* contest.swift in Sources */,
-				9CEA5F26221A3DD8005D0BAD /* Register.swift in Sources */,
+				9C4C5D65227DD75200F820B9 /* UIButton.swift in Sources */,
 				DECFA8E11DD0C96400ABF47D /* AppDelegate.swift in Sources */,
 				DECFA8E31DD0C96400ABF47D /* FirstViewController.swift in Sources */,
+				9C4C5D67227DD75200F820B9 /* UIColor.swift in Sources */,
 				9CCC8B04223FFFEF005009DA /* PlasticCell.swift in Sources */,
 				9C0781E42236FE21005EBA65 /* Question.swift in Sources */,
 				9CCC8B062240001C005009DA /* GlassCell.swift in Sources */,
-				9CEA5F28221A3E0B005D0BAD /* Login.swift in Sources */,
+				9C4C5D66227DD75200F820B9 /* ATCTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -393,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
