@@ -77,7 +77,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="-2512"/>
         </scene>
-        <!--contest-->
+        <!--Concurso-->
         <scene sceneID="Xho-qV-7wy">
             <objects>
                 <viewController id="rId-iF-u1t" customClass="contest" customModule="ECO_FCT" customModuleProvider="target" sceneMemberID="viewController">
@@ -194,7 +194,7 @@
                             <constraint firstItem="cJS-aB-8oQ" firstAttribute="top" secondItem="BuO-8V-cu4" secondAttribute="bottom" constant="17" id="ziu-cf-f77"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="contest" image="contest" id="xO6-t2-1Ta"/>
+                    <tabBarItem key="tabBarItem" title="Concurso" image="contest" id="xO6-t2-1Ta"/>
                     <connections>
                         <outlet property="NomeLabel" destination="dE7-Dr-koO" id="trD-v5-5ki"/>
                         <outlet property="PontosLabel" destination="zh6-8D-xgQ" id="ScE-KU-B8g"/>
@@ -450,7 +450,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="-967"/>
         </scene>
-        <!--Help-->
+        <!--Ajuda-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController storyboardIdentifier="help" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8rJ-Kc-sve" customClass="SecondViewController" customModule="ECO_FCT" customModuleProvider="target" sceneMemberID="viewController">
@@ -521,7 +521,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="v3g-SF-cYh" secondAttribute="trailing" id="I6c-h4-o9k"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Help" image="help" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Ajuda" image="help" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
