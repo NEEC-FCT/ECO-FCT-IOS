@@ -94,7 +94,7 @@ class Question: UIViewController {
         self.hideKeyboardWhenTappedAround()
  
         //Pedido
-        NSLog("Pedido")
+        
         let url = URL(string: "https://ecoapp.neec-fct.com/getPergunta.php")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -111,8 +111,6 @@ class Question: UIViewController {
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                
-                
                 print("error=\(error!)")
                 return
             }
