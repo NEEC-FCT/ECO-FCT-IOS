@@ -40,7 +40,7 @@ class SecondViewController: UIViewController  , UICollectionViewDataSource, UICo
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     var descricao = ["Papel ou Cartão", "Plástico ou Metal", "Vidro", "Resíduo Perigoso", "Resíduo de Elétricos", "Lâmpada", "Óleo lubrificante", "Mobiliário", "Resíduo Orgânico" ]
     var imagens   = ["textdocuments", "bag", "fragile", "dangerouscan", "circuitboard", "lamp", "diesel", "couch", "apple" ]
-    var hex   = ["#09A9FF", "#faff00", "#05af21" , "#4BAA50", "#F94336", "#09A9FF", "#e5f71b", "#673BB7", "#995710" ]
+    var hex   = ["#09A9FF", "#faff00", "#05af21" , "#efc107", "#F94336", "#09A9FF", "#2b7a19", "#673BB7", "#995710" ]
     
     
     // MARK: - UICollectionViewDataSource protocol

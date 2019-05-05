@@ -165,6 +165,8 @@ class ATCClassicLoginScreenViewController: UIViewController {
                 
                 
                 UserDefaults.standard.set( dict?["token"]  as! String, forKey: "TOKEN")
+             
+                 UserDefaults.standard.set( dict?["email"]  as! String, forKey: "EMAIL")
                 
                 //go to storyboard
                 DispatchQueue.main.async {

@@ -41,7 +41,7 @@ class contest: UIViewController ,  UITableViewDelegate , UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Necessita login
-    if(  UserDefaults.standard.string(forKey: "EMAIL")  == nil ){
+    if(  UserDefaults.standard.string(forKey: "TOKEN")  == nil ){
         let alertController = UIAlertController(title: "Alerta", message: "Necessita de Login", preferredStyle: .alert)
         
         let action1 = UIAlertAction(title: "Voltar", style: .default) { (action:UIAlertAction) in
