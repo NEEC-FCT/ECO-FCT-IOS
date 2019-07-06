@@ -241,6 +241,11 @@
                                 <rect key="frame" x="24" y="593" width="327" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="ButtonFourClicked:" destination="jfq-b9-VmX" eventType="touchUpInside" id="5dJ-Gs-0gA"/>
                                 </connections>
@@ -263,7 +268,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -278,6 +283,11 @@
                                 <rect key="frame" x="24" y="553" width="327" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="ButtonThreeClicked:" destination="jfq-b9-VmX" eventType="touchUpInside" id="2dH-uo-i0c"/>
                                 </connections>
@@ -328,6 +338,7 @@
                         <outlet property="ButtonOne" destination="8fa-PO-dJl" id="Gtk-7l-INR"/>
                         <outlet property="ButtonThree" destination="CBF-Sc-RYW" id="deU-h4-AlT"/>
                         <outlet property="ButtonTwo" destination="Mvu-bi-f1m" id="dBF-mj-JqP"/>
+                        <outlet property="textPergunta" destination="dtY-Mb-ggd" id="Qud-YQ-N6Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGj-7G-5Vh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -790,6 +801,6 @@
         <image name="wrong" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Eui-j7-8lW"/>
+        <segue reference="E3k-lT-CdN"/>
     </inferredMetricsTieBreakers>
 </document>

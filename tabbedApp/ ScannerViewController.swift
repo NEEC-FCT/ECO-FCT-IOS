@@ -147,26 +147,17 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                 //UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 
                 //Got Key
-                UserDefaults.standard.set( metadata.stringValue! , forKey: "loginJSONValue")
+                UserDefaults.standard.set( metadata.stringValue! , forKey: "qrcode")
+                
+                NSLog("Li QR " + metadata.stringValue!)
+                
+                
                 //Send next view
                 DispatchQueue.main.async {
                     
-                    let alertController = UIAlertController(title: "Alert", message: "Success", preferredStyle: .alert)
-                    
-                    let action1 = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
-                        print("You've pressed default");
-                        //go to storyboard
-                        sleep(2)
-                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "question")
-                        self.present(newViewController, animated: true, completion: nil)
-                    }
-                    
-                    
-                    
-                    alertController.addAction(action1)
-                    
-                    self.present(alertController, animated: true, completion: nil)
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "question")
+                    self.present(newViewController, animated: true, completion: nil)
                     
                     
                 }

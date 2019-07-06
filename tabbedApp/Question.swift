@@ -19,17 +19,22 @@ class Question: UIViewController {
     @IBOutlet weak var ButtonThree: UIButton!
     @IBOutlet weak var Button3: UIButton!
     
+    @IBOutlet weak var textPergunta: UILabel!
     //Clicado
     @IBAction func ButtonOneClicked(_ sender: Any) {
+        sendReply( resposta: 1 )
     }
     
     @IBAction func ButtonTwoClicked(_ sender: Any) {
+         sendReply( resposta: 2 )
     }
     
     @IBAction func ButtonThreeClicked(_ sender: Any) {
+         sendReply( resposta: 3 )
     }
     
     @IBAction func ButtonFourClicked(_ sender: Any) {
+         sendReply( resposta: 4 )
     }
     
     
@@ -45,7 +50,7 @@ class Question: UIViewController {
         
         
         
-        var postString = "QRCode=" + (UserDefaults.standard.string(forKey: "loginJSONValue")! )
+        var postString = "QRCode=" + (UserDefaults.standard.string(forKey: "qrcode")! )
         postString =  postString + "&email=" + UserDefaults.standard.string(forKey: "EMAIL")!
         postString =   postString + "&token=" + UserDefaults.standard.string(forKey: "TOKEN")!
         
@@ -80,6 +85,22 @@ class Question: UIViewController {
             
             print("responseString = \(responseString!)")
             
+            if( (dict?["sucess"] as? Bool)! ){
+                DispatchQueue.main.async {
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "correct")
+                    self.present(newViewController, animated: true, completion: nil)
+                }
+            }
+            else{
+                
+                DispatchQueue.main.async {
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "wrong")
+                    self.present(newViewController, animated: true, completion: nil)
+                }
+            }
+            
             
         }
         task.resume()
@@ -101,8 +122,9 @@ class Question: UIViewController {
         request.httpMethod = "POST"
         
     
+        NSLog("Recebi QR " + (UserDefaults.standard.string(forKey: "qrcode")!))
         
-        var postString = "QRCode=" + (UserDefaults.standard.string(forKey: "loginJSONValue")! )
+        var postString = "QRCode=" + (UserDefaults.standard.string(forKey: "qrcode")! )
         postString =  postString + "&email=" + UserDefaults.standard.string(forKey: "EMAIL")!
         postString =   postString + "&token=" + UserDefaults.standard.string(forKey: "TOKEN")!
         
@@ -127,16 +149,17 @@ class Question: UIViewController {
             let dict = self.convertToDictionary(text: responseString!)
             print(dict!)
             
-            //login
-           // if( dict?["success"]  as! Int == 1 ){
         
             print("responseString = \(responseString!)")
             
-            if( dict?["sucess"] as! Bool ){
+            if( dict?["success"] as! String?  == "1"){
                 DispatchQueue.main.async {
-                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "correct")
-                    self.present(newViewController, animated: true, completion: nil)
+                self.textPergunta.text! = dict?["pergunta"] as! String
+                self.ButtonOne.setTitle(dict?["A"] as? String, for: .normal)
+                self.ButtonTwo.setTitle(dict?["B"] as? String, for: .normal)
+                self.ButtonThree.setTitle(dict?["C"] as? String, for: .normal)
+                self.Button3.setTitle(dict?["D"] as? String, for: .normal)
+                self.id = (dict?["id"] as? String)!
                 }
             }
             else{
